@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cfd8326d-9324-4366-bec8-a029bd5d8150" name="Default" comment="">
+      <change type="DELETED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/config/SwaggerConfiguration.java" afterPath="" />
+      <change type="DELETED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/entity/AuditEntity.java" afterPath="" />
+      <change type="DELETED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/exception/BusinessException.java" afterPath="" />
+      <change type="DELETED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/config/FMSWebConfiguration.java" afterPath="" />
+      <change type="DELETED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/web/CompanyGroupController.java" afterPath="" />
+      <change type="DELETED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/web/UserController.java" afterPath="" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/dao/config/BaseJPAConfiguration.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/dao/config/BaseJPAConfiguration.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/dao/config/BaseMybatisConfiguration.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/dao/config/BaseMybatisConfiguration.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/dao/config/CustomSqlSessionFactoryBean.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/dao/config/CustomSqlSessionFactoryBean.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/dao/config/MyBatisPagnateInterceptor.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/dao/config/MyBatisPagnateInterceptor.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/excel/reader/ExcelCell.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/excel/reader/ExcelCell.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/excel/reader/ExcelReader.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/excel/reader/ExcelReader.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/excel/reader/ExcelRow.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/excel/reader/ExcelRow.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/excel/reader/RowWalker.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/excel/reader/RowWalker.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/excel/writer/ExcelWriter.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/excel/writer/ExcelWriter.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/excel/writer/RowWriter.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/excel/writer/RowWriter.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/spring/ApplicationContextHolder.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/spring/ApplicationContextHolder.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/utils/GalaxyThreadPool.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/utils/GalaxyThreadPool.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/utils/MD5Utils.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/utils/MD5Utils.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/utils/NumberUtils.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/utils/NumberUtils.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/utils/PageInfo.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/utils/PageInfo.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/web/ResponseData.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/web/ResponseData.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/galaxyinternet/common/web/ResponseStatus.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/src/main/java/com/gi/ctdn/web/ResponseStatus.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/FMSApplication.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/FMSApplication.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/annotation/LogAudit.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/annotation/LogAudit.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/config/LogAuditInterceptor.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/config/LogAuditInterceptor.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/config/LoginInterceptor.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/config/LoginInterceptor.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/constants/FMSConstants.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/constants/FMSConstants.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/dao/jpa/BalanceDAO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/dao/jpa/BalanceDAO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/dao/jpa/CompanyDAO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/dao/jpa/CompanyDAO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/dao/jpa/CompanyGroupDAO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/dao/jpa/CompanyGroupDAO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/dao/jpa/FilesDAO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/dao/jpa/FilesDAO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/dao/jpa/LogDAO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/dao/jpa/LogDAO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/dao/jpa/SubjectDAO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/dao/jpa/SubjectDAO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/dao/jpa/UserCompanyDAO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/dao/jpa/UserCompanyDAO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/dao/jpa/UserDAO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/dao/jpa/UserDAO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/dao/jpa/UserGroupDAO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/dao/jpa/UserGroupDAO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/dao/mybatis/ReportDAO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/dao/mybatis/ReportDAO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/entity/Balance.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/entity/Balance.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/entity/Company.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/entity/Company.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/entity/CompanyGroup.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/entity/CompanyGroup.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/entity/Files.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/entity/Files.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/entity/Log.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/entity/Log.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/entity/Report.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/entity/Report.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/entity/Subject.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/entity/Subject.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/entity/User.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/entity/User.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/entity/UserCompany.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/entity/UserCompany.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/entity/UserGroup.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/entity/UserGroup.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/service/BalanceService.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/service/BalanceService.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/service/CompanyGroupService.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/service/CompanyGroupService.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/service/CompanyService.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/service/CompanyService.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/service/FilesService.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/service/FilesService.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/service/LogService.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/service/LogService.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/service/ReportService.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/service/ReportService.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/service/SubjectService.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/service/SubjectService.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/service/UserCompanyService.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/service/UserCompanyService.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/service/UserGroupService.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/service/UserGroupService.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/service/UserService.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/service/UserService.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/validate/CompanyAdd.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/validate/CompanyAdd.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/validate/CompanyChange.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/validate/CompanyChange.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/validate/CompanyGroupAdd.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/validate/CompanyGroupAdd.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/validate/CompanyGroupEdit.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/validate/CompanyGroupEdit.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/validate/SubjectAdd.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/validate/SubjectAdd.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/validate/UserAdd.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/validate/UserAdd.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/validate/UserChange.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/validate/UserChange.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/validate/UserCompanyAdd.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/validate/UserCompanyAdd.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/vo/BalanceVO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/vo/BalanceVO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/vo/CompanyGroupVO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/vo/CompanyGroupVO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/vo/CompanyVO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/vo/CompanyVO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/vo/LogVO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/vo/LogVO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/vo/SubjectVO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/vo/SubjectVO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/vo/UserCompanyVO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/vo/UserCompanyVO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/vo/UserVO.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/vo/UserVO.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/web/BalanceController.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/web/BalanceController.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/web/CompanyController.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/web/CompanyController.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/web/ErrorAdvice.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/web/ErrorAdvice.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/web/FilesController.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/web/FilesController.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/web/IndexController.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/web/IndexController.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/web/LogController.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/web/LogController.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/web/ReportController.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/web/ReportController.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/web/SubjectController.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/web/SubjectController.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/web/UserCompanyController.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/web/UserCompanyController.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/galaxyinternet/fms/web/UserGroupController.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/web/UserGroupController.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/test/java/com/galaxyinternet/fms/service/CompanyServiceTest.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/test/java/com/gi/ctdn/service/CompanyServiceTest.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/test/java/com/galaxyinternet/fms/service/UserServiceTest.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/test/java/com/gi/ctdn/service/UserServiceTest.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/test/java/com/galaxyinternet/fms/web/BalanceControllerTest.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/test/java/com/gi/ctdn/web/BalanceControllerTest.java" />
+      <change type="MOVED" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/test/java/com/galaxyinternet/fms/web/UserControllerTest.java" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/test/java/com/gi/ctdn/web/UserControllerTest.java" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform/ctdn-biz/pom.xml" afterPath="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform/ctdn-biz/pom.xml" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform/ctdn-data-ods/pom.xml" afterPath="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform/ctdn-data-ods/pom.xml" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform/xingmou-user/pom.xml" afterPath="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform/xingmou-user/pom.xml" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/resources/application.yaml" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/resources/application.yaml" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/resources/mybatis/mapper/ReportMapper.xml" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/resources/mybatis/mapper/ReportMapper.xml" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/resources/templates/files/main.html" afterPath="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/resources/templates/files/main.html" />
+    </list>
+    <ignored path="$PROJECT_DIR$/ctdn-admin-common/target/" />
+    <ignored path="$PROJECT_DIR$/ctdn-admin-server/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/target/" />
+    <ignored path="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-common/target/" />
+    <ignored path="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/target/" />
+    <ignored path="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform/ctdn-api-restful/target/" />
+    <ignored path="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform/ctdn-data-ods/target/" />
+    <ignored path="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform/xingmou-user/target/" />
+    <ignored path="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform/target/" />
+    <ignored path="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform/xingmou-api-common/target/" />
+    <ignored path="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform/ctdn-biz/target/" />
+    <ignored path="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform/xingmou-assembly/target/" />
+    <ignored path="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform/xingmou-data-rest/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$USER_HOME$/IdeaProjects/ctdn-project/elasticsearch-5.0" value="2994858788000" />
+        <entry key="$USER_HOME$/IdeaProjects/ctdn-project/elasticsearch-5.0/test" value="1497429394000" />
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/ctdn-admin-server/pom.xml" />
+        <option value="$PROJECT_DIR$/ctdn-admin-server/src/main/resources/application.yaml" />
+        <option value="$PROJECT_DIR$/ctdn-admin-server/src/main/java/com/gi/ctdn/mybatis/ReportDAO.java" />
+        <option value="$PROJECT_DIR$/ctdn-admin-server/src/main/java/com/gi/ctdn/pojo/Report.java" />
+        <option value="$PROJECT_DIR$/ctdn-admin-server/src/main/java/com/gi/ctdn/dao/ReportDAO.java" />
+        <option value="$PROJECT_DIR$/ctdn-admin-server/src/main/java/com/gi/ctdn/pojo/Balance.java" />
+        <option value="$PROJECT_DIR$/ctdn-admin-server/src/main/resources/sql-map-base/ReportMapper.xml" />
+        <option value="$PROJECT_DIR$/ctdn-admin-server/src/main/java/com/gi/ctdn/web/IndexController.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$MAVEN_REPOSITORY$" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="27" />
+    <option name="width" value="1366" />
+    <option name="height" value="741" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctdn-admin-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galaxy-fms-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctdn-admin-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galaxy-fms-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galaxy-fms-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctdn-admin-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galaxy-fms-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galaxy-fms-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctdn-admin-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galaxy-fms-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galaxy-fms-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctdn-admin-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galaxy-fms-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galaxy-fms-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctdn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctdn-admin-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galaxy-fms-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galaxy-fms-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctdn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctdn-admin-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galaxy-fms-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galaxy-fms-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctdn-admin-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctdn-admin-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/ctdn/xingmou-platform" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gi.ctdn.pojo" />
+      <recent name="com.gi.ctdn.mybatis" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ctdn-admin-server/src/main/resources/sql-map-base" />
+      <recent name="$PROJECT_DIR$/ctdn-admin-server/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.FMSApplication">
+    <configuration default="false" name="FMSApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.gi.ctdn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.gi.ctdn.FMSApplication" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ctdn-admin-server" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ctdn-admin-common" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.FMSApplication" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.FMSApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cfd8326d-9324-4366-bec8-a029bd5d8150" name="Default" comment="" />
+      <created>1512734977305</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1512734977305</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="27" width="1366" height="741" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5586777" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6363636" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25341427" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289256" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="52" column="25" lean-forward="true" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-server/src/main/resources/application-dev.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-server/src/main/resources/application-ctdn.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-server/src/main/resources/application.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-server/src/main/resources/static/js/map/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-server/src/main/resources/sql-map-base/sqlmap-mapper-News.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-common/src/main/java/com/gi/ctdn/config/BaseDBConf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-server/src/main/resources/sql-map-base/sqlmap-mapper-AppProjectDemand.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="2" column="41" lean-forward="false" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/IdeaProjects/fx/galaxy-fms-parent/galaxy-fms-server/src/main/java/com/gi/ctdn/dao/mybatis/ReportDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-server/src/main/java/com/gi/ctdn/pojo/Report.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-common/src/main/java/com/gi/ctdn/config/MyBatisConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="49" column="14" lean-forward="true" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-server/src/main/java/com/gi/ctdn/pojo/Balance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-server/src/main/java/com/gi/ctdn/dao/ReportDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-server/src/main/resources/sql-map-base/ReportMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="150" column="92" lean-forward="false" selection-start-line="150" selection-start-column="92" selection-end-line="150" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-server/src/main/java/com/gi/ctdn/FMSApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="e#459#460#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-common/src/main/java/com/gi/ctdn/web/MessageInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctdn-admin-server/src/main/java/com/gi/ctdn/web/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="75" column="37" lean-forward="true" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#778#779#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#1043#1044#0" expanded="true" />
+            <element signature="e#1065#1066#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ctdn-admin-common</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.1.11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

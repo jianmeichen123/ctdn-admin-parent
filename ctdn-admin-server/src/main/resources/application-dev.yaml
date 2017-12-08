@@ -1,0 +1,36 @@
+debug: false
+server:
+  context-path: /fms
+  port: 8099
+  tomcat:
+    access_log_enabled: true
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource  
+    url: jdbc:mysql://10.9.130.142:3306/finance_qa?characterEncoding=utf-8
+    username: finance_user
+    password: wjrD8EhRhS3vWtq7
+    driver-class-name: com.mysql.jdbc.Driver
+    minIdle: 1  
+    maxActive: 10  
+    initialSize: 1  
+    timeBetweenEvictionRunsMillis: 3000  
+    minEvictableIdleTimeMillis: 300000  
+    validationQuery: SELECT 1 
+    testWhileIdle: true  
+    testOnBorrow: false  
+    testOnReturn: false 
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: none
+          
+  thymeleaf:
+    cache: false
+    cache-period: 0
+  template:
+    cache: false    
+

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.galaxyinternet:galaxy-common:1.0.0-fz">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/galaxyinternet/galaxy-common/1.0.0-fz/galaxy-common-1.0.0-fz.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/galaxyinternet/galaxy-common/1.0.0-fz/galaxy-common-1.0.0-fz-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/galaxyinternet/galaxy-common/1.0.0-fz/galaxy-common-1.0.0-fz-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,135 @@
+<form class="well form-horizontal" action="#" id="company-form">
+    <fieldset>
+        <div class="control-group">
+            <label for="companyName" class="control-label required">*往来名称:</label>
+            <div class="controls">
+                <input class="input-medium" id="companyName" name="companyName" type="text"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="aliasName1" class="control-label">别名1:</label>
+            <div class="controls">
+                <input type="hidden"/>
+                <input class="input-medium" id="aliasName1" name="aliasName1" type="text"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="aliasName2" class="control-label">别名2:</label>
+            <div class="controls">
+                <input type="hidden"/>
+                <input class="input-medium" id="aliasName2" name="aliasName2" type="text"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="aliasName3" class="control-label ">别名3:</label>
+            <div class="controls">
+                <input type="hidden"/>
+                <input class="input-medium" id="aliasName3" name="aliasName3" type="text"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="aliasName4" class="control-label ">别名4:</label>
+            <div class="controls">
+                <input type="hidden"/>
+                <input class="input-medium" id="aliasName4" name="aliasName4" type="text"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="aliasName5" class="control-label">别名5:</label>
+            <div class="controls">
+                <input type="hidden"/>
+                <input class="input-medium" id="aliasName5" name="aliasName5" type="text"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="groupId" class="control-label">所属分组:</label>
+            <div class="controls">
+                <select name="groupId" id="groupId" class="input-medium">
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <input class="btn btn-success" type="submit" value="保存" id="save-company-btn">
+            </div>
+        </div>
+    </fieldset>
+</form>
+<style>
+    #company-form select { width: 164px;}
+
+</style>
+<script type="text/javascript" th:inline="javascript">
+
+    $("#company-form").validate({
+        onkeyup:false,
+        errorElement : 'span',
+        errorClass : 'help-inline',
+        focusInvalid : false,
+        debug:true,
+        rules: {
+            companyName: {
+                required: true,
+                uniqueValue: 'input:text'
+            },
+            aliasName1: {
+                uniqueValue: 'input:text'
+            },
+            aliasName2: {
+                uniqueValue: 'input:text'
+            },
+            aliasName3: {
+                uniqueValue: 'input:text'
+            },
+            aliasName4: {
+                uniqueValue: 'input:text'
+            },
+            aliasName5: {
+                uniqueValue: 'input:text'
+            }
+        }
+    });
+    $("#save-company-btn").click(function(event) {
+        //console.log('tseet');
+        event.preventDefault();
+        if($("#company-form").validate().form())
+        {
+            var url = /*[[@{company/add}]]*/;
+            var data = JSON.stringify($("#company-form").serializeJson());
+            $.ajax({
+                type: "POST",
+                url: url,
+                contentType: 'application/json;charset=UTF-8',
+                data: data,
+                success: function (data) {
+                    if (data.code == 'OK') {
+                        alert('保存成功');
+                        $(".modal-close").click();
+                        $("#company-table").refreshTable();
+                    }
+                    else {
+                        alert(data.message);
+                    }
+                }
+            });
+       }
+    });
+
+    //填充数据
+    var url = /*[[@{companyGroup/getAll}]]*/;
+    $.ajax({
+        type: 'POST',
+        url: url,
+        success: function (data) {
+            if (data.code == 'OK') {
+                $("#groupId").html('<option value="-1">未选择</option>');
+                var companyGroupList = data.values;
+                for ( var i=0 ; i < companyGroupList.length ; i++ )
+                {
+                    $("#groupId").append('<option value="'+companyGroupList[i].id+'">'+ companyGroupList[i].title +'</option>');
+                }
+
+            }
+        }
+    });
+</script>

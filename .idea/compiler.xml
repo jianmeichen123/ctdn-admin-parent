@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ctdn-admin-common" />
+        <module name="ctdn-admin-server" />
+        <module name="ctdn-api-restful" />
+        <module name="ctdn-biz" />
+        <module name="ctdn-data-ods" />
+        <module name="galaxy-fms-common" />
+        <module name="galaxy-fms-server" />
+        <module name="xingmou-api-common" />
+        <module name="xingmou-assembly" />
+        <module name="xingmou-data-rest" />
+        <module name="xingmou-user" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ctdn-admin-common" target="1.7" />
+      <module name="ctdn-admin-parent" target="1.7" />
+      <module name="ctdn-admin-server" target="1.7" />
+      <module name="ctdn-api-restful" target="1.7" />
+      <module name="ctdn-biz" target="1.7" />
+      <module name="ctdn-data-ods" target="1.7" />
+      <module name="galaxy-fms-common" target="1.7" />
+      <module name="galaxy-fms-parent" target="1.7" />
+      <module name="galaxy-fms-server" target="1.7" />
+      <module name="xingmou-api-common" target="1.7" />
+      <module name="xingmou-assembly" target="1.7" />
+      <module name="xingmou-data-rest" target="1.7" />
+      <module name="xingmou-platform" target="1.7" />
+      <module name="xingmou-user" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

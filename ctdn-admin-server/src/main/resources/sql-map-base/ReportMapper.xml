@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gi.ctdn.dao.ReportDAO">
+	<resultMap type="com.gi.ctdn.pojo.Balance" id="BalanceMap">
+		<id column="id" property="id" />
+		<result column="com_id" 				property="companyId" />
+		<result column="com_name" 				property="companyName" />
+		<result column="subject_code" 			property="subjectCode" />
+		<result column="subject_name" 			property="subjectName" />
+		<result column="subject_name_clear" 	property="subjectNameClear" />
+		<result column="currency" 				property="currency" />
+		<result column="Initial_debit_balance" 	property="initialDebitBalance" />
+		<result column="Initial_credit_balance" property="initialCreditBalance" />
+		<result column="current_debit_amount" 	property="currentDebitAmount" />
+		<result column="current_credit_amount" 	property="currentCreditAmount" />
+		<result column="debit_year_amount" 		property="debitYearAmount" />
+		<result column="credit_year_amount" 	property="creditYearAmount" />
+		<result column="final_debit_balance" 	property="finalDebitBalance" />
+		<result column="final_credit_balance" 	property="finalCreditBalance" />
+		<result column="contrast_com_id" 		property="contrastCompanyId" />
+		<result column="contrast_subject_code" 	property="contrastSubjectCode" />
+		<result column="contrast_subject_name" 	property="contrastSubjectName" />
+		<result column="contrast_subject_name_clear" 	property="contrastSubjectNameClear" />
+		<result column="contrast_final_debit_balance" 	property="contrastFinalDebitBalance" />
+		<result column="contrast_final_credit_balance" 	property="contrastFinalCreditBalance" />
+		<result column="check_balance_type" 	property="checkBalanceType" />
+		<result column="check_contrast_subject_code_clear" 	property="checkContrastSubjectCodeClear" />
+		<result column="check_subject_code_clear" 	property="checkSubjectCodeClear" />
+		<result column="check_add_code" 	property="checkAddCode" />
+		<result column="check_com_name" 	property="checkComName" />
+		<result column="check_type" 	property="checkType" />
+	</resultMap>
+	<sql id="BaseColumns">
+		com_id,
+		com_name,
+		subject_code,
+		subject_name,
+		subject_name_clear,
+		currency,
+		Initial_debit_balance,
+		Initial_credit_balance,
+		current_debit_amount,
+		current_credit_amount,
+		debit_year_amount,
+		credit_year_amount,
+		final_debit_balance,
+		final_credit_balance,
+		contrast_com_id,
+		contrast_subject_code,
+		contrast_subject_name,
+		contrast_subject_name_clear,
+		contrast_final_debit_balance,
+		contrast_final_credit_balance,
+		check_balance_type,
+		check_contrast_subject_code_clear,
+		check_subject_code_clear,
+		check_add_code,
+		check_com_name,
+		check_type
+	</sql>
+
+	<select id="selectMatchList" resultMap="BalanceMap" parameterType="com.gi.ctdn.pojo.Balance">
+		select
+		a.`com_id`,
+		a.`com_name`,
+		a.`subject_code`,
+		a.`subject_name`,
+		a.subject_name_clear,
+		a.`currency`,
+		a.Initial_debit_balance,
+		a.Initial_credit_balance,
+		a.current_debit_amount,
+		a.current_credit_amount,
+		a.debit_year_amount,
+		a.credit_year_amount,
+		a.`final_debit_balance`,
+		a.`final_credit_balance`,
+		null as contrast_com_id,
+		null as contrast_subject_code,
+		null as contrast_subject_name,
+		null as contrast_subject_name_clear,
+		null as contrast_final_debit_balance,
+		null as contrast_final_credit_balance,
+		case when a.`subject_code` like concat(s.code1,'%') then 1 when  a.`subject_code` like concat(s.add_code1,'%') then 2 else 3 end as check_balance_type,
+		case when a.`subject_code` like concat(s.code1,'%') then left(s.`code2`,4) when  a.`subject_code` like concat(s.code2,'%') then left(s.code1,4) else null end as check_contrast_subject_code_clear,
+		left(`subject_code`,4) as check_subject_code_clear,
+		case when a.`subject_code` like concat(s.code1,'%') and s.add_code1 is not null then s.`add_code1` end  as check_add_code,
+		c.`com_name` as check_com_name,
+		s.type as check_type
+		from balance a
+		left join files f on a.year = f.year and a.month = f.month and a.com_id = f.company_id
+		right join subject s on a.`subject_code` like concat(s.code1,'%') or a.`subject_code` like concat(s.add_code1,'%') or a.`subject_code` like concat(s.code2,'%')
+		right join company c on a.`subject_name_clear` in (c.`com_name`,c.`alias_name1`,c.`alias_name2`,c.`alias_name3`,c.`alias_name4`,c.`alias_name5`)
+		left join company d on d.id = #{companyId}
+		where
+		f.`examine_status`=1 and ( a.com_id = #{companyId} or a.subject_name_clear in (d.`com_name`,d.`alias_name1`,d.`alias_name2`,d.`alias_name3`,d.`alias_name4`,d.`alias_name5`) )
+		and ( a.`final_credit_balance`>0 or a.`final_debit_balance`>0 )
+		and a.year = #{year}
+		and a.month = #{month}
+		<if test="companyGroupId != null">and c.`group_id` = #{companyGroupId}</if>
+		<if test="companyGroupId != null">and a.`com_id` in (select id from company where group_id=#{companyGroupId})</if>
+	</select>
+	<select id="selectExternal" resultMap="BalanceMap" parameterType="com.gi.ctdn.pojo.Balance">
+		SELECT
+		b1.com_id,
+		b1.com_name,
+		b1.subject_code,
+		b1.subject_name,
+		b1.currency,
+		b1.Initial_debit_balance,
+		b1.Initial_credit_balance,
+		b1.current_debit_amount,
+		b1.current_credit_amount,
+		b1.debit_year_amount,
+		b1.credit_year_amount,
+		b1.final_debit_balance,
+		b1.final_credit_balance,
+		NULL as contrast_com_id,
+		NULL as contrast_subject_code,
+		NULL as contrast_subject_name,
+		NULL as contrast_final_debit_balance,
+		NULL as contrast_final_credit_balance,
+		null as check_balance_type,
+		null as check_contrast_subject_code_clear,
+		null as check_subject_code_clear,
+		null as check_add_code,
+		null as check_name,
+		null as check_type
+		FROM balance b1
+		INNER JOIN files f1 ON b1.year = f1.year AND b1.month = f1.month AND b1.com_id = f1.company_id
+		INNER JOIN SUBJECT s ON b1.subject_code LIKE CONCAT(s.code1,'%') OR b1.subject_code LIKE CONCAT(s.code2,'%')
+		LEFT JOIN company c ON b1.com_id = c.id
+		WHERE f1.examine_status = 1
+		AND (
+		NOT EXISTS
+		(
+		SELECT 1 FROM company c
+		WHERE b1.subject_name_clear = c.com_name
+		OR b1.subject_name_clear = c.alias_name1
+		OR b1.subject_name_clear = c.alias_name2
+		OR b1.subject_name_clear = c.alias_name3
+		OR b1.subject_name_clear = c.alias_name4
+		OR b1.subject_name_clear = c.alias_name5
+		)
+		)
+		<if test="companyId != null"> and b1.com_id = #{companyId}</if>
+		<if test="year != null"> and b1.year = #{year}</if>
+		<if test="month != null"> and b1.month = #{month}</if>
+		<if test="companyGroupId != null and companyGroupId != -1"> and c.group_id = #{companyGroupId}</if>
+	</select>
+	<select id="selectExternalAmount" resultMap="BalanceMap" parameterType="com.gi.ctdn.pojo.Balance">
+		SELECT
+		null as com_id,
+		null as com_name,
+		left(b1.subject_code,4) as subject_code,
+		null as  subject_name,
+		null as currency,
+		sum(IFNULL(b1.Initial_debit_balance, 0)) as Initial_debit_balance,
+		sum(IFNULL(b1.Initial_credit_balance, 0)) as Initial_credit_balance,
+		sum(IFNULL(b1.current_debit_amount, 0)) as current_debit_amount,
+		sum(IFNULL(b1.current_credit_amount, 0)) as current_credit_amount,
+		sum(IFNULL(b1.debit_year_amount, 0)) as debit_year_amount,
+		sum(IFNULL(b1.credit_year_amount, 0)) as credit_year_amount,
+		sum(IFNULL(b1.final_debit_balance, 0)) as final_debit_balance,
+		sum(IFNULL(b1.final_credit_balance, 0)) as final_credit_balance,
+		NULL as contrast_com_id,
+		NULL as contrast_subject_code,
+		NULL as contrast_subject_name,
+		NULL as contrast_final_debit_balance,
+		NULL as contrast_final_credit_balance,
+		null as check_balance_type,
+		null as check_contrast_subject_code_clear,
+		null as check_subject_code_clear,
+		null as check_add_code,
+		null as check_name,
+		null as check_type
+		FROM balance b1
+		INNER JOIN files f1 ON b1.year = f1.year AND b1.month = f1.month AND b1.com_id = f1.company_id
+		INNER JOIN SUBJECT s ON b1.subject_code LIKE CONCAT(s.code1,'%') OR b1.subject_code LIKE CONCAT(s.code2,'%')
+		LEFT JOIN company c ON b1.com_id = c.id
+		WHERE f1.examine_status = 1
+		AND (
+		NOT EXISTS
+		(
+		SELECT 1 FROM company c
+		WHERE b1.subject_name_clear = c.com_name
+		OR b1.subject_name_clear = c.alias_name1
+		OR b1.subject_name_clear = c.alias_name2
+		OR b1.subject_name_clear = c.alias_name3
+		OR b1.subject_name_clear = c.alias_name4
+		OR b1.subject_name_clear = c.alias_name5
+		)
+		)
+		<if test="companyId != null"> and b1.com_id = #{companyId}</if>
+		<if test="year != null"> and b1.year = #{year}</if>
+		<if test="month != null"> and b1.month = #{month}</if>
+		<if test="companyGroupId != null and companyGroupId != -1"> and c.group_id = #{companyGroupId}</if>
+		group by left(b1.`subject_code`,4)
+	</select>
+</mapper>

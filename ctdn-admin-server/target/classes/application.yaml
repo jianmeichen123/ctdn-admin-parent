@@ -1,0 +1,20 @@
+spring: 
+  profiles: 
+    active: "dev"
+    include: ctdn
+  thymeleaf:
+    prefix: classpath:/templates
+    
+swagger:
+  basePackage: com.galaxyinternet.fms
+  title: 星河互联财务核对系统 RESTful API
+  desc: 星河互联财务核对系统 RESTFUL API
+  serviceUrl: http://www.galaxyinternet.com
+  version: 1.0
+
+fms:
+  loginInterceptor:
+    excludes: /login,/userGroup/setGroup
+
+upload:
+  rootPath:  /home/zcy/tmp

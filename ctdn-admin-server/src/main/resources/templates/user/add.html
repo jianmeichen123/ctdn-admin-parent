@@ -1,0 +1,84 @@
+<form class="well form-horizontal" action="#" id="user-form">
+	<fieldset>
+		<div class="control-group">
+			 <label for="username" class="control-label required" >*用户名:</label>
+			<div class="controls">
+				<input class="input-medium" name="login" required minlength="5" maxlength="20">
+			</div>
+		</div>
+		<div class="control-group ">
+			 <label for="password" class="control-label required" >*初始密码:</label>
+			<div class="controls">
+				<input class="input-medium" id="password" name="password" required autocomplete="off" pass_word="true" minlength="6" maxlength="12">
+			</div>
+		</div>
+		<div class="control-group ">
+			 <label for=password2 class="control-label required" >*重复密码:</label>
+			<div class="controls">
+				<input class="input-medium" name="password2" required pass_word="true" equalTo="#password">
+			</div>
+		</div>
+		<div class="control-group">
+			<label for="realName" class="control-label required" >*姓名:</label>
+			<div class="controls">
+				<input class="input-medium" name="realName" required >
+			</div>
+		</div>
+		<div class="control-group">
+			 <label for="email" class="control-label required" >*邮箱:</label>
+			<div class="controls">
+				<input class="input-medium" name="email" required email="true">
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<input class="btn btn-success" type="submit" value="保存" id="save-user-btn">		
+			</div>
+		</div>
+	</fieldset>
+</form>
+<script type="text/javascript" th:inline="javascript">
+  	//验证，不能全为空格
+    /*jQuery.validator.addMethod("removeSpace", function (value, element) {
+    	var str = value.replace(/(^\s+)|(\s+$)/g,"");
+   	return this.optional(element) || (str !="" ?true:false);
+    }, "这是必填字段");*/
+
+	$("#user-form").validate({
+		onkeyup:false,  
+        errorElement : 'span',  
+        errorClass : 'help-inline',  
+        focusInvalid : false,
+        messages:{
+        	password2:{
+        		equalTo:'两次密码输入不一致'
+        	}
+        }
+	});
+	$("#save-user-btn").click(function(event){
+		event.preventDefault();
+		if($("#user-form").validate().form())
+		{
+			var url = /*[[@{user/add}]]*/;
+			var data = JSON.stringify($("#user-form").serializeJson2());
+			$.ajax({
+				type: "POST",
+				url:url,
+				contentType:'application/json;charset=UTF-8',
+				data:data,
+				success:function(data){
+					if(data.code == 'OK')
+					{
+						alert('保存成功');
+						$(".modal-close").click();
+						$("#user-table").refreshTable();
+					}
+					else
+					{
+						alert(data.message);
+					}
+				}
+			})
+		}
+	});
+</script>

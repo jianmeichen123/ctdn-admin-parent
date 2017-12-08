@@ -1,0 +1,127 @@
+<div class="navbar navbar-inverse" id="top" style="margin-bottom: 0px;">
+    <div class="navbar-inner">
+        <div class="container">
+        <a class="brand" title="数字化运营支撑&amp;辅助决策参考系统平台" href="javascript:void(0);">财务账目管理系统</a>
+            <ul class="nav"></ul>
+            <div class="name_tit"><span th:text="${session._user_login_}?${session._user_login_.groupTitle}:''"></span></div>
+
+            <div class="userinfo">
+                <ul class="nav">
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user icon-white"></i>&nbsp;<span th:text="${session._user_login_}?${session._user_login_.realName}:'liping'">admin</span><b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" th:href="@{user/changePassword}">修改密码</a></li>
+                            <li><a href="javascript:logout();" >退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="span2">
+	<div class="well sidebar-nav" id="layout" style="position: absolute; width: 164px; padding: 10px 0px; min-height: 100px; top: 50px;">
+	    <div class="sidebar-menu">
+			
+			
+			<a href="#####user" class="nav-header menu-first" data-toggle="collapse" style="display: none;">
+				<i class="icon-bookmark icon-large"></i>用户管理</a>
+			
+			<ul id="user" class="nav nav-list  collapse menu-second" style="display: none;">
+				<li>
+					<a href="###" th:href="@{user}" id="menu-user">
+						添加及修改用户
+					</a>
+				</li>
+			</ul>
+		
+	    	<a href="####basic" class="nav-header menu-first" data-toggle="collapse"  style="display: none;">
+				<i class="icon-bookmark icon-large"></i>基础信息管理</a>
+			
+			<ul id="basic" class="nav nav-list collapse menu-second" style="display: none;">
+				<li>
+					<a href="####" th:href="@{companyGroup}" id="menu-companyGroup">
+						往来分组信息表（体系内）
+					</a>
+				</li>
+				<li>
+					<a href="####" th:href="@{company}" id="menu-company">
+						往来信息表（体系内）
+					</a>
+				</li>
+				<li>
+					<a href="####" th:href="@{subject}" id="menu-subject">
+						核账往来对应表
+					</a>
+				</li>
+			</ul>
+			<a href="####balance" class="nav-header menu-first" data-toggle="collapse">
+				<i class="icon-bookmark icon-large"></i>账目管理</a>
+			
+			<ul id="balance" class="nav nav-list collapse menu-second">
+				<li>
+					<a href="####" th:href="@{files}" id="menu-files">
+						科目余额表导入
+					</a>
+				</li>
+				<li>
+					<a href="####"  th:href="@{balance}" id="menu-balance">
+						科目余额表处理
+					</a>
+				</li>
+				<li>
+					<a href="####"  th:href="@{report}" id="menu-report">
+						往来账核验报表
+					</a>
+				</li>
+			</ul>
+		
+	    	<a href="####log" class="nav-header menu-first" data-toggle="collapse" style="display: none;">
+				<i class="icon-bookmark icon-large"></i>操作日志管理</a>
+			
+				<ul id="log" class="nav nav-list   collapse menu-second" style="display: none;">
+						<li>
+							<a href="####" th:href="@{log}" id="menu-log">
+								系统操作日志查询
+							</a>
+						</li>
+				</ul>
+			
+			
+		    	
+			
+		</div>	
+	</div><!-- sidebar -->				
+</div>
+<script type="text/javascript" th:inline="javascript">
+
+    $('.dropdown-toggle').dropdown();
+	var loginUser = /*[[${session._user_login_}]]*/;
+	if(loginUser.login=='admin') {
+		$("#user").show();
+		$("#basic").show();
+		$("#log").show();
+		$("a[href='#####user']").show();
+		$("a[href='####basic']").show();
+		$("a[href='####log']").show();
+	}
+
+
+	function logout()
+	{
+		if(!confirm("确定要退出系统？"))
+		{
+			return;
+		}	
+		var url = [[@{/logout}]];
+		$.ajax({
+			url:url,
+			type:'GET',
+			cache: false,
+			success:function(){
+				window.location = [[@{/index}]];
+			}
+		})
+	}
+
+</script>

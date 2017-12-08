@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css">
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.validate.js"></script>
+	<script type="text/javascript" src="./js/messages_zh.js"></script>
+	<script type="text/javascript" src="./js/form_validate.js"></script>
+	<style type="text/css">
+		.login{
+			padding-right: 0;
+			padding-left: 0;
+			margin-left: 20px;
+			float: right;
+			font-weight: bold;
+			color: #000;
+		}
+	</style>
+</head>
+<body>
+  <nav class="navbar navbar-inverse" role="navigataion">
+    	<div class="navbar-header">
+        	<a class="navbar-brand brand" title="数字化运营支撑&amp;集团账目核对" href="#">
+           	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;财务平台（数字化运营支撑&amp;集团账目核对）
+            </a> 
+        </div>
+        <!--<div class="login">-->
+       		<!--<ul class="nav navbar-nav">-->
+            	<!--<li><a href="javascript:void(0);">登录</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    </nav>
+	<div class="container">
+		<div class="content">
+			<div class="form-container-site" style="background:transparent">
+				<h1>登录</h1>
+				<form class="well  form-horizontal" id="login_form" role="form" method="post">
+					<fieldset>
+						<div class="form-group login_input">
+							<div class="input-group col-sm-9" style="margin:auto">
+								<span for="username">用户名:</span>
+								<input type="text" class="form-control" name="username" id="username" placeholder="请输入用户名" required minlength="5" maxlength="20">
+							</div>
+						</div>
+						<div class="form-group login_input">
+							<div class="input-group col-sm-9" style="margin:auto">
+								<span for="password">密码:</span>
+								<input type="password" class="form-control" name="password" id="password" placeholder="请输入密码" required pass_word="true" autocomplete="off" minlength="6" maxlength="12">
+							</div>
+						</div>
+						<div class="form-group"  style="text-align:center;">
+						<button type="submit" id="loginbtn" class="btn btn-primary">登 录</button>
+						</div>
+
+					</fieldset>
+				</form>
+				<div class="well  form-horizontal none" id="group_in">
+				<div class="form-group login_input  " >
+					<div class="input-group col-sm-9" style="margin:auto">
+						<span for="password">选择分组:</span>
+						<select id="group">
+						</select>
+						<span class="form-group"><button  id="group_click" class="btn btn-primary">进 入</button></span>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  <div class="container">
+      <div class="content">
+          <hr>
+          <footer class="footer">
+			  <p>Copyright © 星河互联集团有限公司</p>
+          </footer>
+      </div>
+  </div>	
+
+</body>
+ 
+</html>
