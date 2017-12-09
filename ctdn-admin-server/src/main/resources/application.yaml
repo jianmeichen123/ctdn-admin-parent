@@ -14,7 +14,7 @@ swagger:
 
 fms:
   loginInterceptor:
-    excludes: /login,/userGroup/setGroup
+    excludes: /login,/publish,/index
 
 upload:
   rootPath:  /home/zcy/tmp

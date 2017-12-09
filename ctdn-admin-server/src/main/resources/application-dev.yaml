@@ -8,7 +8,7 @@ server:
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource  
-    url: jdbc:mysql://10.9.130.142:3306/finance_qa?characterEncoding=utf-8
+    url: jdbc:mysql://10.9.130.142:3306/ctdn?characterEncoding=utf-8
     username: finance_user
     password: wjrD8EhRhS3vWtq7
     driver-class-name: com.mysql.jdbc.Driver
