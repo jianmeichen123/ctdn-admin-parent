@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gi.ctdn.dao.AdminDao">
+	<resultMap type="com.gi.ctdn.pojo.Admin" id="AdminMap">
+		<result column="login" property="login" jdbcType="VARCHAR"/>
+		<result column="password" property="password" jdbcType="VARCHAR"/>
+	</resultMap>
+	<sql id="BaseColumns">
+        login,
+        password
+	</sql>
+
+	<select id="selectByLogin" resultMap="AdminMap" parameterType="com.gi.ctdn.pojo.Admin">
+        select
+        <include refid="BaseColumns"/>
+        from app_admin
+        where login=#{login}
+	</select>
+
+</mapper>
