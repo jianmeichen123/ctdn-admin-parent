@@ -13,7 +13,7 @@
 <body>
 <header>
 	<div class='fl head-fl'>创投大脑后台管理系统</div>
-	<div class='fr head-fr'><span class='user-name'></span>您好，YANHAO</div>
+	<div class='fr head-fr'><span class='user-name'></span>您好，<span th:text="${session.user_login}?${session.user_login.login}:'管理员'"></span></div>
 </header>
 <div class='menu index-menu'>
 	<ul>
@@ -25,15 +25,17 @@
 	<div class='index-nav'>
 	 	<span class='index-search'>搜索</span>
 		<input class='index-nav-title' type="text" placeholder='报告标题'/>
-		<span class='index-span-time'>发布时间</span><input class='index-nav-time' type='text'/><span class='index-line'>—</span><input class='index-nav-time' type='text'/>
+		<span class='index-span-time'>发布时间</span>
+		<input class='index-nav-time' type='text'/><span class='index-line'>—</span>
+		<input class='index-nav-time' type='text'/>
 		<span class='index-nav-confirm fr'>确定</span>
 	</div>
 	<div class='index-table-title'>
-	 <span class='fl index-result'>共删选出<em>234</em>个报告</span>
+	 <span class='fl index-result'>共筛选出<em>234</em>个报告</span>
 	 <span class='publish-report fr'>+发布报告</span>
 	</div>
 	<div class='index-table-content'>
-		<table data-toggle='table' class='index-table'>
+		<table data-toggle='table' class='index-table' data-url="reports" id="table">
 			<thead>
 				<tr>
 					<th>报告</th>
@@ -120,12 +122,37 @@
 <script src="bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
 <script src="bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
 <script src="layer/layer.js"></script>
+<script src="js/report.js"></script>
 <script>
 /* $('#index-table').bootstrapTable({
 	
 }) */
 
 
+
+
+
+</script>
+<script type="text/javascript" th:inline="javascript">
+
+	var loginUser = /*[[${session.user_login}]]*/;
+
+	function logout()
+	{
+		if(!confirm("确定要退出系统？"))
+		{
+			return;
+		}
+		var url = [[@{/logout}]];
+		$.ajax({
+			url:url,
+			type:'GET',
+			cache: false,
+			success:function(){
+				window.location = [[@{/index}]];
+			}
+		})
+	}
 
 </script>
 

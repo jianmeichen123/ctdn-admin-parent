@@ -1,15 +1,20 @@
 package com.gi.ctdn.web;
 
+import com.gi.ctdn.pojo.Admin;
+import com.gi.ctdn.service.AdminService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @Validated
@@ -17,17 +22,36 @@ public class IndexController
 {
 	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
+	@Autowired
+	AdminService adminService;
+
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "login", value = "登录名", required = true, paramType="query"),
+	})
+	@RequestMapping(value="/getAdmin",method=RequestMethod.POST)
+	@ResponseBody
+	public MessageInfo<Admin> getAdmin(@RequestParam("login") String login){
+		MessageInfo<Admin> messageInfo = new MessageInfo<>();
+		try{
+			messageInfo.setData(adminService.getBylogin(login));
+		}catch (Exception e){
+			logger.error("登录错误", e);
+		}
+		return messageInfo;
+	}
+
 	@ApiOperation(value="系统主页")
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index()
 	{
-		return "redirect:/files";
+		return "/index";
 	}
 
-	@RequestMapping(value = "/header", method = RequestMethod.GET)
+	@ApiOperation(value="发布页面")
+	@RequestMapping(value = "/publish", method = RequestMethod.GET)
 	public String header()
 	{
-		return "/header";
+		return "/publish";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -44,54 +68,42 @@ public class IndexController
 			})
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	@ResponseBody
-	public MessageInfo login(MessageInfo aa)
+	public MessageInfo login(@NotEmpty(message = "用户名不能为空")
+								 @RequestParam("login")
+										 String login,
+							 @RequestParam("password")
+									 String password,
+							 HttpServletRequest request)
 	{
 		MessageInfo data = new MessageInfo<>();
 		try
 		{
-			return data;
-//			User user = userService.login(login, password);
-//			//查找当前用户分组
-//			if(user != null){
-//				List<UserGroup> userGroupList = userGroupService.findByUserId(user.getId());
-//				List<CompanyGroup> groupList = new ArrayList<>();
-//				if(!userGroupList.isEmpty()){
-//					for(UserGroup userGroup :userGroupList){
-//						groupList.add(userGroup.getCompanyGroup());
-//					}
-//				}else{
-//					groupList = companyGroupService.getAll();
-//				}
-//				user.setCompanyGroupList(groupList);
-//				data.setValue(user);
-//				Log log = new Log();
-//				log.setCreatedId(user.getId());
-//				final Date now = new Date();
-//				log.setCreatedTime(now);
-//				log.setLogTime(now);
-//				log.setUserLogin(user.getLogin());
-//				log.setUserRealName(user.getRealName());
-//				log.setOperation("登录");
-//				log.setSummary("登录");
-//				logService.save(log);
-			//request.getSession().setAttribute(FMSConstants.SESS_ATTR_USER_LOGIN, user);
+			Admin admin = adminService.getBylogin(login);
+			if(admin !=null&&admin.getPassword().equals(password)){
+				data.setData(admin);
+				request.getSession().setAttribute(CtdnConstants.SESS_ATTR_USER_LOGIN, admin);
+				return data;
+			}else{
+				data.setMessage("账号密码不匹配");
+				return data;
+			}
 		} catch (Exception e)
 		{
 			logger.error("登录错误", e);
-//			data.setCode(ResponseStatus.ERROR);
-//			data.setMessage(e.getMessage());
+			data.setStatus(MessageStatus.ERROR_CODE);
+			data.setMessage(e.getMessage());
 		}
 		return data;
 	}
 
-//	@ApiOperation(value="用户退出")
-//	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-//	@ResponseBody
-//	public ResponseData<User> logout(HttpSession session)
-//	{
-//		ResponseData<User> data = new ResponseData<User>();
-//		session.invalidate();
-//		return data;
-//	}
+	@ApiOperation(value="用户退出")
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	@ResponseBody
+	public MessageInfo<Admin> logout(HttpSession session)
+	{
+		MessageInfo<Admin> data = new MessageInfo<>();
+		session.invalidate();
+		return data;
+	}
 
 }
