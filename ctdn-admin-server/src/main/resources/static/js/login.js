@@ -28,7 +28,6 @@ $( function(){
         });
     });
 
-
      $("body").keydown(function(event) {
          if (event.keyCode == "13") {//keyCode=13是回车键
              $('.to-login').click();
