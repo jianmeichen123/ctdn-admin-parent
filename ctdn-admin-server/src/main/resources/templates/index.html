@@ -24,7 +24,7 @@
 <div class='main-content'>
 	<div class='index-nav'>
 	 	<span class='index-search'>搜索</span>
-		<input class='index-nav-title' type="text" placeholder='报告标题'/>
+		<input id="title" class='index-nav-title' type="text" placeholder='报告标题'/>
 		<span class='index-span-time'>发布时间</span>
 		<input id='publish_time_start' class='index-nav-time' type='text'  readonly='readonly'/><span class='index-line'>—</span>
 		<input id='publish_time_end' class='index-nav-time' type='text' readonly='readonly'/>
@@ -35,19 +35,22 @@
 	 <span class='publish-report fr'>+发布报告</span>
 	</div>
 	<div class='index-table-content'>
+		<input type="hidden" name = "pageSize" value="10">
+		<input type="hidden" name = "pageNo" value="1">
 		<table data-toggle='table' class='index-table' data-url="reports" id="table">
 			<thead>
 				<tr>
-					<th>报告</th>
-					<th>发布时间</th>
-					<th>作者</th>
-					<th>来源</th>
-					<th>状态</th>
+					<th data-field="title">报告</th>
+					<th data-field="publishDate">发布时间</th>
+					<th data-field="authorName">作者</th>
+					<th data-field="source">来源</th>
+					<th data-formatter="state">状态</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+			<!--
+			<tr>
 					<td>
 						<img src='./img/table-pic.png'/>
 						<span>报告稿包噶包高报告AA吧啊比AA家百高啊百八十度</span>
@@ -60,7 +63,7 @@
 						<span class='on-over'>下架</span>
 					</td>
 					<td><a class='index-tetail' href='#'>详情</a></td>
-				
+
 				</tr>
 				<tr>
 					<td>
@@ -75,7 +78,7 @@
 						<span class='on-over'>下架</span>
 					</td>
 					<td><a class='index-tetail' href='#'>详情</a></td>
-				
+
 				</tr>
 				<tr>
 					<td>
@@ -90,20 +93,12 @@
 						<span class='on-over'>下架</span>
 					</td>
 					<td><a class='index-tetail' href='#'>详情</a></td>
-				
-				</tr>
-				
-			
-			
+
+				</tr>-->
+
 			</tbody>
-		
 		</table>
-	
-	
 	</div>
-	
-
-
 </div>
 </div>
 

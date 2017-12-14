@@ -1,26 +1,20 @@
 
-$(function(){
-    $.get("reports",function(data){
-            reportList=data;
-            if(data){
-                if(data.page){
-                    $(".index-result em").text(data.page.total);
-                }
-            }else{
-                $(".index-result em").text(0);
-            }
-    })
-})
+function _query(){
+
+    var data = query_data()
+    $('#table').bootstrapTable('refresh', {
+        'pageNumber':1,
+        query:data
+     });
+}
+function _cleanTitle(){
+    $("#title").val("");
+}
 
 function query_data(){
     var querydata={};
-    $.get("reports",function(data){
-                querydata=data;
-        })
-       return querydata;
-
-       var startDate=$("#begin").val();
-           var endDate=$("#end").val();
+       var startDate=$("#publish_time_start").val();
+           var endDate=$("#publish_time_end").val();
            var sdate = [];
            var edate = [];
            var d1 = "";
@@ -43,17 +37,17 @@ function query_data(){
                querydata["startDate"] = startDate;
                querydata["endDate"] = endDate;
            }
-           querydata[$("#projTitle").attr("data-field")] = $("#projTitle").val();
-           querydata["keyword"] = $("#projTitle").val();
+//           querydata[$("#title").attr("data-field")] = $("#title").val();
+           querydata["keyword"] = $("#title").val();
            return querydata
 }
 function queryParams(params) {  //配置参数
     var data = query_data()
       data["pageSize"]=params.pageSize,   //页面大小
-      data["pageNum"]=params.pageNumber -1,  //页码
-      data["orderBy"]=params.sortName //排序列名
-//      data["order"]=params.sortOrder//排位命令（desc，asc）
-//    return data;
+      data["pageNo"]=params.pageNumber,  //页码
+      data["orderBy"]='publishDate' //排序列名
+      data["order"]='desc'//排位命令（desc，asc）
+    return data;
   }
 $('#table').bootstrapTable({
     url: "reports",         //请求后台的URL（*）
@@ -71,12 +65,35 @@ $('#table').bootstrapTable({
     tableDataTotalName:'total',
     sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
     pageNumber: 1,                       //初始化加载第一页，默认第一页
-    pageSize: 15,                       //每页的记录行数（*）
-    pageList: [15,20,30],        //可供选择的每页的行数（*）
+    pageSize: 10,                       //每页的记录行数（*）
+    pageList: [10,15,20],        //可供选择的每页的行数（*）
     formatLoadingMessage: function () {
         return "请稍等，正在加载中...";
     },
     formatNoMatches: function () {  //没有匹配的结果
         return '抱歉，没有相关的结果';
     },
+    onLoadSuccess: function (data) {
+            $(".index-result em").text(data.page.total)
+        }
 });
+
+function state(value,row,index){
+    var state=row.state;
+    var id = row.id;
+    if(state==0){
+      state="<span class='on-use '>使用中</span>&nbsp;<span class='on-over' onclick='over("+id+")'>下架</span>"
+    }
+    if(state==1){
+        state="<span class='on-over'>使用中</span>&nbsp;<span class='on-use'>下架</span>"
+    }
+     return state;
+}
+
+function over(id){
+
+    $.post("updateState/"+id,{"id":id},function(data){
+
+//        _query();
+    })
+}

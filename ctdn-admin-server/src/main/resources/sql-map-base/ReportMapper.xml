@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.gi.ctdn.dao.ReportDAO">
 	<resultMap type="com.gi.ctdn.pojo.Report" id="ReportMap">
+		<id column="id" property="id" jdbcType="INTEGER"/>
 		<result column="title" 				property="title" jdbcType="VARCHAR"/>
 		<result column="publishDate" 				property="publishDate" jdbcType="VARCHAR"/>
 		<result column="source" 			property="source" jdbcType="VARCHAR"/>
@@ -19,7 +20,7 @@
 		<result column="state" 		property="state" jdbcType="INTEGER"/>
 	</resultMap>
 	<sql id="BaseColumns">
-		title,publishDate,source,authorName,authorAvatar,authorDesc,listPic,reportBody,pageNum,coverPic,reportDesc,
+		id,title,publishDate,source,authorName,authorAvatar,authorDesc,listPic,reportBody,pageNum,coverPic,reportDesc,
 		fileUrl,type,state
 	</sql>
 
@@ -34,5 +35,11 @@
 		count(*)
 		from app_report
 	</select>
+
+	<update id="updateReportState" >
+		update app_report
+		set state=1
+		where id=#{id}
+	</update>
 
 </mapper>

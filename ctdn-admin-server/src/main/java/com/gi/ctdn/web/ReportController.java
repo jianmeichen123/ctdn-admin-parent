@@ -7,10 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 @Controller
 @Validated
@@ -30,13 +33,25 @@ public class ReportController {
     public Admin adminName(HttpServletRequest request){
         return (Admin) request.getSession().getAttribute("user_login");
     }
+
+    /**
+     * 报告列表
+     * @return
+     */
     @RequestMapping(value = "/reports")
     @ResponseBody
-    public MessageInfo<Pagination> reports(){
+    public MessageInfo<Pagination> reports(@RequestBody Map map){
         MessageInfo<Pagination> messageInfo = new MessageInfo<>();
         Pagination pagination = new Pagination();
-        pagination = reportService.getReportList();
+        pagination = reportService.getReportList(map);
         messageInfo.setPage(pagination);
         return messageInfo;
+    }
+
+    @RequestMapping(value="updateState/{id}")
+    @ResponseBody
+    public void updateState(@PathVariable Integer id){
+        reportService.updateState(id);
+
     }
 }

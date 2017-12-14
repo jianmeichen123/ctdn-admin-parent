@@ -1,9 +1,14 @@
 package com.gi.ctdn.pojo;
 
+import com.gi.ctdn.web.Pagination;
 import io.swagger.models.auth.In;
 
-public class Report
+public class Report extends Pagination
 {
+    /**
+     * id
+     */
+    private String id;
     /**
      *标题
      */
@@ -64,6 +69,14 @@ public class Report
      *0:正在使用 1:下架
      */
     private Integer state;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
