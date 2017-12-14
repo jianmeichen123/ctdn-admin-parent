@@ -13,7 +13,7 @@
 <body>
 <header>
 	<div class='fl head-fl'>创投大脑后台管理系统<a href="index.html">内容编辑</a></div>
-	<div class='fr head-fr'><span class='user-name'></span>您好，YANHAO</div>
+	<div class='fr head-fr'><span class='user-name'></span>您好，<span th:text="${session.user_login}?${session.user_login.login}:'管理员'"></span></div>
 </header>
 <div class='menu index-menu'>
 	<ul>

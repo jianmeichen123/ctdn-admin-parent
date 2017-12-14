@@ -41,10 +41,7 @@ public class ReportController {
     @RequestMapping(value = "/reports")
     @ResponseBody
     public MessageInfo<Pagination> reports(@RequestBody Map map){
-        MessageInfo<Pagination> messageInfo = new MessageInfo<>();
-        Pagination pagination = new Pagination();
-        pagination = reportService.getReportList(map);
-        messageInfo.setPage(pagination);
+        MessageInfo<Pagination> messageInfo =  reportService.getReportList(map);
         return messageInfo;
     }
 

@@ -1,6 +1,5 @@
 //查询分页
 function _query(){
-
     var data = query_data()
     $('#table').bootstrapTable('refresh', {
         'pageNumber':1,
@@ -12,6 +11,7 @@ function _cleanTitle(){
     $("#title").val("");
 }
 
+//确定
 function sure(){
     _query();
 }

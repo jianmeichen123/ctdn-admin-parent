@@ -12,7 +12,7 @@
 </head>
 <body>
 <header>
-	<div class='fl head-fl'>创投大脑后台管理系统<a href="index.html">内容编辑</a></div>
+	<div class='fl head-fl'>创投大脑后台管理系统<a href="index">内容编辑</a></div>
 	<div class='fr head-fr'><span class='user-name'></span>您好，<span th:text="${session.user_login}?${session.user_login.login}:'管理员'"></span></div>
 </header>
 <div class='menu index-menu'>
@@ -31,8 +31,8 @@
 		<span class='index-nav-confirm fr' id="sure" onclick="sure()">确定</span>
 	</div>
 	<div class='index-table-title'>
-	 <span class='fl index-result'>共筛选出<em>234</em>个报告</span>
-	 <span class='publish-report fr'>+发布报告</span>
+	 <span class='fl index-result'>共筛选出<em></em>个报告</span>
+	 <a href="publish"><span class='publish-report fr'>+发布报告</span></a>
 	</div>
 	<div class='index-table-content'>
 		<input type="hidden" name = "pageSize" value="10">
