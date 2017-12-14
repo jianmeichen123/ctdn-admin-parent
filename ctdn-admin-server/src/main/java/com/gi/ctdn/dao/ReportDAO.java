@@ -6,11 +6,12 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface ReportDAO
 {
-    List<Report> selectReports();
+    List<Report> selectReports(Map map);
     Integer selectReportNum();
     void updateReportState(@Param("id") Integer id);
 }

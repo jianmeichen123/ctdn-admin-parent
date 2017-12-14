@@ -28,6 +28,12 @@
 		select
 		<include refid="BaseColumns"/>
 		from app_report
+		<where>
+		<if test="null !=keyword and ''!=keyword">title like CONCAT('%',#{keyword},'%')</if>
+		<if test="null !=startDate and ''!=startDate">and publishDate >= #{startDate}</if>
+		<if test="null !=endDate and ''!=endDate"><![CDATA[and publishDate < #{endDate}]]></if>
+		</where>
+		order by publishDate desc
 	</select>
 
 	<select id="selectReportNum" resultMap="ReportMap" parameterType="com.gi.ctdn.pojo.Report">

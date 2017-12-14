@@ -1,4 +1,4 @@
-
+//查询分页
 function _query(){
 
     var data = query_data()
@@ -7,10 +7,16 @@ function _query(){
         query:data
      });
 }
+//清除搜索报告标题
 function _cleanTitle(){
     $("#title").val("");
 }
 
+function sure(){
+    _query();
+}
+
+//查询参数
 function query_data(){
     var querydata={};
        var startDate=$("#publish_time_start").val();
@@ -41,6 +47,8 @@ function query_data(){
            querydata["keyword"] = $("#title").val();
            return querydata
 }
+
+//分页参数
 function queryParams(params) {  //配置参数
     var data = query_data()
       data["pageSize"]=params.pageSize,   //页面大小
@@ -49,6 +57,8 @@ function queryParams(params) {  //配置参数
       data["order"]='desc'//排位命令（desc，asc）
     return data;
   }
+
+  //bootstrap分页
 $('#table').bootstrapTable({
     url: "reports",         //请求后台的URL（*）
     method: 'post',                      //请求方式（*）
@@ -78,6 +88,7 @@ $('#table').bootstrapTable({
         }
 });
 
+//报告状态
 function state(value,row,index){
     var state=row.state;
     var id = row.id;
@@ -96,4 +107,17 @@ function over(id){
 
 //        _query();
     })
+}
+
+//报告标题
+function title(value,row,index){
+    var title=row.title;
+    var listPic = row. listPic;
+    if(!listPic){
+       listPic =  './img/table-pic.png'
+    }
+    if(title){
+        title="<img src='"+listPic+"'/><span>"+row.title+"</span>"
+    }
+    return title;
 }

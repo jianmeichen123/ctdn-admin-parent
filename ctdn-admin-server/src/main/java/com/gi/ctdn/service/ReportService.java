@@ -22,11 +22,10 @@ public class ReportService {
 
     //报告列表分页
     public Pagination getReportList(Map map){
-        System.out.println(map);
         Pagination pagination = new Pagination();
         try {
             PageHelper.startPage((Integer) map.get("pageNo"),(Integer) map.get("pageSize"));
-            List<Report> reportList = reportDAO.selectReports();
+            List<Report> reportList = reportDAO.selectReports(map);
             if(reportList!=null){
                 PageInfo pageInfo = new PageInfo<>(reportList);
                 pagination.setRecords(reportList);

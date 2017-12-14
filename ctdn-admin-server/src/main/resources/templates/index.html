@@ -28,7 +28,7 @@
 		<span class='index-span-time'>发布时间</span>
 		<input id='publish_time_start' class='index-nav-time' type='text'  readonly='readonly'/><span class='index-line'>—</span>
 		<input id='publish_time_end' class='index-nav-time' type='text' readonly='readonly'/>
-		<span class='index-nav-confirm fr'>确定</span>
+		<span class='index-nav-confirm fr' id="sure" onclick="sure()">确定</span>
 	</div>
 	<div class='index-table-title'>
 	 <span class='fl index-result'>共筛选出<em>234</em>个报告</span>
@@ -40,7 +40,7 @@
 		<table data-toggle='table' class='index-table' data-url="reports" id="table">
 			<thead>
 				<tr>
-					<th data-field="title">报告</th>
+					<th data-formatter="title">报告</th>
 					<th data-field="publishDate">发布时间</th>
 					<th data-field="authorName">作者</th>
 					<th data-field="source">来源</th>

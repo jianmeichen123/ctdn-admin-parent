@@ -25,21 +25,6 @@ public class IndexController
 	@Autowired
 	AdminService adminService;
 
-	@ApiImplicitParams({
-			@ApiImplicitParam(name = "login", value = "登录名", required = true, paramType="query"),
-	})
-	@RequestMapping(value="/getAdmin",method=RequestMethod.POST)
-	@ResponseBody
-	public MessageInfo<Admin> getAdmin(@RequestParam("login") String login){
-		MessageInfo<Admin> messageInfo = new MessageInfo<>();
-		try{
-			messageInfo.setData(adminService.getBylogin(login));
-		}catch (Exception e){
-			logger.error("登录错误", e);
-		}
-		return messageInfo;
-	}
-
 	@ApiOperation(value="系统主页")
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index()
@@ -52,6 +37,13 @@ public class IndexController
 	public String header()
 	{
 		return "/publish";
+	}
+
+	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
+	@ApiOperation(value="欢迎页面")
+	public String welcome()
+	{
+		return "/welcome";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)

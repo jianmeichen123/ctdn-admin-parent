@@ -18,7 +18,7 @@ $( function(){
         },function(data){
             if(data.data)
             {
-                window.location.href = "index";
+                window.location.href = "welcome";
             }
             else
             {

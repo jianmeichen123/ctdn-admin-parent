@@ -10,7 +10,7 @@
 <body>
 <header>
 	<div class='fl head-fl'><img src=""/>创投大脑后台管理系统</div>
-	<div class='fr head-fr'><span class='user-name'></span>您好，YANHAO</div>
+	<!--<div class='fr head-fr'><span class='user-name'></span>您好，YANHAO</div>-->
 </header>
 <div class='login-content'>
 	<form class='login-form' id="">
@@ -31,7 +31,6 @@ $(function(){
 	var passwordInput = $('.backInputPassword').val().trim();
 	$('.back-login-input').blur(function(){
 		var _this = $(this);
-		console.log(_this);
 		var thisVal  = _this.val().trim();
 		if(thisVal==""){
 			$(this).addClass('inputDanger');

@@ -10,7 +10,7 @@
 <body>
 <header>
 	<div class='fl head-fl'>创投大脑后台管理系统<a href="index.html">内容编辑</a></div>
-	<div class='fr head-fr'><span class='user-name'></span>您好，<span th:text="${session._user_login_}?${session._user_login_.login}:'liping'">admin</span></div>
+	<div class='fr head-fr'><span class='user-name'></span>您好，<span th:text="${session.user_login}?${session.user_login.login}:'管理员'">admin</span></div>
 </header>
 <div class='login-content'>
 	<div class='login-welcome clearfix'>
@@ -29,9 +29,24 @@
 
 
 </body>
-<script>
-
-
+<script type="text/javascript" th:inline="javascript">
+	var loginUser = /*[[${session.user_login}]]*/;
+	function logout()
+	{
+		if(!confirm("确定要退出系统？"))
+		{
+			return;
+		}
+		var url = [[@{/logout}]];
+		$.ajax({
+			url:url,
+			type:'GET',
+			cache: false,
+			success:function(){
+				window.location = [[@{/index}]];
+			}
+		})
+	}
 
 </script>
 
