@@ -16,9 +16,9 @@ public class Pagination implements Serializable {
 
     private List records;
 
-    private Integer pageNum;
+    private Integer pageNo=1;
 
-    private Integer pageSize;
+    private Integer pageSize=10;
 
     public Long getTotal() {
         return total;
@@ -36,12 +36,12 @@ public class Pagination implements Serializable {
         this.records = records;
     }
 
-    public Integer getPageNum() {
-        return pageNum;
+    public Integer getPageNo() {
+        return pageNo;
     }
 
-    public void setPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public void setPageNo(Integer pageNo) {
+        this.pageNo = pageNo;
     }
 
     public Integer getPageSize() {
