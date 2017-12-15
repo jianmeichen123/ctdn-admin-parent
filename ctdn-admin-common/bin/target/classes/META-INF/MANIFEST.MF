@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: ctdn-admin-common
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: Administrator
+Implementation-Vendor-Id: com.galaxyinternet
+Build-Jdk: 1.8.0_121
+Implementation-URL: http://projects.spring.io/spring-boot/ctdn-admin-p
+ arent/ctdn-admin-common/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

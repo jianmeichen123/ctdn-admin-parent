@@ -20,7 +20,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <common.version>1.0</common.version>
+        <common.version>1.0-SNAPSHOT</common.version>
         <druid.version>1.0.26</druid.version>
         <thymeleaf.version>3.0.6.RELEASE</thymeleaf.version>
     </properties>
@@ -72,10 +72,6 @@
     </build>
 
     <dependencies>
-        <dependency>
-            <groupId>com.galaxyinternet</groupId>
-            <artifactId>cdtn-admin-common</artifactId>
-        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>

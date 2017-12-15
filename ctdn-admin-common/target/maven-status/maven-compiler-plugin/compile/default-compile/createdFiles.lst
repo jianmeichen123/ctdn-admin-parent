@@ -1,9 +1,0 @@
-com/gi/ctdn/config/BaseDBConf.class
-com/gi/ctdn/config/SwaggerConfiguration.class
-com/gi/ctdn/config/MyBatisConfig.class
-com/gi/ctdn/web/Query.class
-com/gi/ctdn/web/Pagination.class
-com/gi/ctdn/spring/ApplicationContextHolder.class
-com/gi/ctdn/web/MessageStatus.class
-com/gi/ctdn/web/MessageInfo.class
-com/gi/ctdn/web/PojoInfo.class
