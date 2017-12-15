@@ -7,6 +7,8 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import com.gi.ctdn.config.LoginInterceptor;
+
 @Configuration
 public class FMSWebConfiguration extends WebMvcConfigurerAdapter
 {

@@ -28,7 +28,13 @@
 			<li><span class='publish-title publish-user'>作者</span><input class='publish-time' type='text'/><span class='author-span'>作者头像</span><label class='author-label'>作者头像上传 <em>64*64</em><input class='publish-file' type='file'/></label></li>
 			<li><span class='publish-title publish-user-detail'>作者简介</span><textarea class='publish-user-textarea' rows="" cols=""></textarea></li>
 			<li><span class='publish-title'><em>*</em>图片上传</span><label class='author-label'>列表图片上传<em>121*75</em><input class='publish-file' type='file'/></label></li>
-			<li><span class='publish-title fl'><em>*</em>报告正文</span><div class='publish-textarea-content'><div class='publish-textarea-top'></div><textarea></textarea></div></li>
+			<li>
+				<span class='publish-title fl'><em>*</em>报告正文</span>
+				<div class='publish-textarea-content'>
+					<div class='publish-textarea-top'></div>
+					<script id="editor" type="text/plain" style="height:402px;"></script>
+				</div>
+			</li>
 		</ul>
 		
 		
@@ -52,6 +58,10 @@
 <!--时间插件  -->
 <script src="bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
 <script src="bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<!--富文本编辑  -->
+<script type="text/javascript" charset="utf-8" src="uEditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="uEditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="uEditor/lang/zh-cn/zh-cn.js"></script>
 <script src="layer/layer.js"></script>
 <script>
 $(function(){
@@ -66,8 +76,9 @@ $(function(){
 	})
 })
 
+/* 富文本编辑 */
 
-
+var ue = UE.getEditor("editor")
 </script>
 
 </html>
