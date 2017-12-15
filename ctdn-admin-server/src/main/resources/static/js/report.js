@@ -101,6 +101,7 @@ function state(value,row,index){
      return state;
 }
 
+//下架
 function over(id){
 	var spanTxt = $(this).text();
 	$('.index-head p').text(spanTxt);
@@ -115,6 +116,10 @@ $('.index-cancel').click(function(){
 	$(this).parents('.index-tips').hide();
 });
 $('.index-confirm').click(function(){
+    $.post("updateState/"+id,{"id":id},function(data){
+
+    //        _query();
+        })
 	$(this).parents('.index-tips').hide();
 });
 
