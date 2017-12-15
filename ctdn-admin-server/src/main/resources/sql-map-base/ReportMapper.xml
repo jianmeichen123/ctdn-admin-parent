@@ -48,4 +48,9 @@
 		where id=#{id}
 	</update>
 
+	<update id="updateState" >
+		update app_report
+		set state=0
+		where id=#{id}
+	</update>
 </mapper>

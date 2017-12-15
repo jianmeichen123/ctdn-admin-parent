@@ -46,7 +46,33 @@ public class ReportService {
         return messageInfo;
     }
 
-    public void updateState(Integer id){
-        reportDAO.updateReportState(id);
+    public MessageInfo<Integer> updateState(Integer id){
+        MessageInfo<Integer> messageInfo = new MessageInfo<>();
+        try{
+            Integer result = reportDAO.updateReportState(id);
+            messageInfo.setData(result);
+            messageInfo.setStatus(MessageStatus.OK_CODE);
+            messageInfo.setMessage(MessageStatus.OK_MESSAGE);
+        }catch (Exception e){
+            messageInfo.setStatus(MessageStatus.ERROR_CODE);
+            messageInfo.setMessage(MessageStatus.ERROR_MESSAGE);
+            LOGGER.error(e.getMessage());
+        }
+        return messageInfo;
+    }
+
+    public MessageInfo<Integer> updateStateTo(Integer id){
+        MessageInfo<Integer> messageInfo = new MessageInfo<>();
+        try{
+            Integer result = reportDAO.updateState(id);
+            messageInfo.setData(result);
+            messageInfo.setStatus(MessageStatus.OK_CODE);
+            messageInfo.setMessage(MessageStatus.OK_MESSAGE);
+        }catch (Exception e){
+            messageInfo.setStatus(MessageStatus.ERROR_CODE);
+            messageInfo.setMessage(MessageStatus.ERROR_MESSAGE);
+            LOGGER.error(e.getMessage());
+        }
+        return messageInfo;
     }
 }

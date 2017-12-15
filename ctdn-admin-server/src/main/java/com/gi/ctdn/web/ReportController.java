@@ -47,8 +47,13 @@ public class ReportController {
 
     @RequestMapping(value="updateState/{id}")
     @ResponseBody
-    public void updateState(@PathVariable Integer id){
-        reportService.updateState(id);
+    public MessageInfo<Integer> updateState(@PathVariable Integer id){
+        return  reportService.updateState(id);
+    }
 
+    @RequestMapping(value="updateStateTo/{id}")
+    @ResponseBody
+    public MessageInfo<Integer> updateStateTo(@PathVariable Integer id){
+        return  reportService.updateStateTo(id);
     }
 }
