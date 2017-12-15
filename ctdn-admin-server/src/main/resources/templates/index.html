@@ -103,7 +103,16 @@
 </div>
 
 
+<!-- 提示窗 -->
+<div class="index-tips">
+	<div class="index-head">提示信息</div>
+		<p>您确定下架此报告？</p>
+	<div class='index-foot'>
+		<span class="index-confirm">确定</span>
+		<span class="index-cancel">取消</span>
+	</div>
 
+</div>
 
 
 
@@ -207,6 +216,21 @@ function beTimeCompare(btime,etime){
 		})
 	}
 
+	/* 弹窗居中代码 */
+	$(document).ready(function(){
+		$(window).resize(function(){
+			$(".index-tips").css({
+				position:"fixed",
+				left:($(window).width()-$(".index-tips").outerWidth())/2,
+				top:($(window).height()-$(".index-tips").outerHeight())/2
+			})
+		});
+		$(window).resize();
+	})
+
+	
+	
+	
 </script>
 
 </html>

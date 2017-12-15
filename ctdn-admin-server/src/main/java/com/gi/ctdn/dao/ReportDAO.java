@@ -13,6 +13,6 @@ public interface ReportDAO
 {
     List<Report> selectReports(Map map);
     Integer selectReportNum();
-    Integer updateReportState(@Param("id") Integer id);
+    void updateReportState(@Param("id") Integer id);
     Integer insert(Report report);
 }

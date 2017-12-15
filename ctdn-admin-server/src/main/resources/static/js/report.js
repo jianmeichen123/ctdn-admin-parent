@@ -96,18 +96,27 @@ function state(value,row,index){
       state="<span class='on-use '>使用中</span>&nbsp;<span class='on-over' onclick='over("+id+")'>下架</span>"
     }
     if(state==1){
-        state="<span class='on-over'>使用中</span>&nbsp;<span class='on-use'>下架</span>"
+        state="<span class='on-over'>使用中</span>&nbsp;<span class='on-use' onclick='over("+id+")'>下架</span>"
     }
      return state;
 }
 
 function over(id){
-
+	var spanTxt = $(this).text();
+	$('.index-head p').text(spanTxt);
+	$('.index-tips').show();
     $.post("updateState/"+id,{"id":id},function(data){
 
 //        _query();
     })
 }
+//弹窗确定，取消操作
+$('.index-cancel').click(function(){
+	$(this).parents('.index-tips').hide();
+});
+$('.index-confirm').click(function(){
+	$(this).parents('.index-tips').hide();
+});
 
 //报告标题
 function title(value,row,index){
