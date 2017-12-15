@@ -105,8 +105,10 @@ function over(id){
 	var spanTxt = $(this).text();
 	$('.index-head p').text(spanTxt);
 	$('.index-tips').show();
+	
+	
     $.post("updateState/"+id,{"id":id},function(data){
-
+    	
 //        _query();
     })
 }
@@ -116,6 +118,7 @@ $('.index-cancel').click(function(){
 });
 $('.index-confirm').click(function(){
 	$(this).parents('.index-tips').hide();
+	
 });
 
 //报告标题
