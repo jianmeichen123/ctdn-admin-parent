@@ -65,12 +65,11 @@ header{position:fixed;min-width:647px;top:0px;left:0px;width:100%;height:90px;li
 .publish-content-box{padding-top:140px;margin-left:260px;}
 .publish{min-width:850px;}
 .publish-time-row{background:url('../img/row.png') no-repeat right 7px center;cursor:pointer;}
-
-
-
-
-
-
+.index-tips{background:#fff;position: absolute;width:400px;height:280px;left:0px;top:0px;border:1px solid #f0f0f0;z-index:999;border-radius:5px;font-family:"Microsoft YaHei"}
+.index-head{height:50px;font-size:16px;font-weight:bold;line-height:50px;text-align:center;background:#ecf6ff;color:#333333;}
+.index-tips p{text-align:center;margin-top:70px;color:#333333;font-size:15px;}
+.index-foot span{display:inline-block;cursor:pointer;width:107px;height:40px;line-height:40px;text-align:center;color:#fff;border-radius:5px;background:#2393f7;margin-right:25px;}
+.index-foot {text-align:center;margin-top:50px;}
 
 
 
