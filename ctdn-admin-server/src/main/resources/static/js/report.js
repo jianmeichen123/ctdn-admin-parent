@@ -94,10 +94,10 @@ function state(value,row,index){
     var id = row.id;
     var useId = id+"use";
     if(state==0){
-      state="<span class='on-use ' id="+useId+" onclick='use(this)' data-id="+id+">使用中</span>&nbsp;<span class='on-over' id="+id+" onclick='over(this)' data-id="+id+">下架</span>"
+      state="<span class='on-use ' id="+useId+" data-id="+id+">使用中</span>&nbsp;<span class='on-over' id="+id+" onclick='over(this)' data-id="+id+">下架</span>"
     }
     if(state==1){
-        state="<span class='on-over' id="+useId+" onclick='use(this)' data-id="+id+">启用</span>&nbsp;<span class='on-use' id="+id+" onclick='over(this)' data-id="+id+">已下架</span>"
+        state="<span class='on-use' id="+useId+" data-id="+id+">已下架</span>&nbsp;<span class='on-over' id="+id+" onclick='use(this)'  data-id="+id+">启用</span>"
     }
      return state;
 }
@@ -108,7 +108,9 @@ function over(id){
 	var id = $(id).attr('data-id')
 	var useId = id+"use";
 	var useTxt = $("#"+useId).html();
-	$('.index-tips').show(useTxt);
+	$(".index-title").html("您确定"+spanTxt+"此报告？");
+	$('.index-tips').show();
+
 
     //弹窗确定，取消操作
     $('.index-cancel').click(function(){
@@ -117,14 +119,11 @@ function over(id){
     $('.index-confirm').click(function(){
     	$(this).parents('.index-tips').hide();
     	 $.post("updateState/"+id,{"id":id},function(data){
-                spanTxt = '已下架'
-                useTxt = '启用'
+                spanTxt = '启用'
+                useTxt = '已下架'
                $('#'+id).text(spanTxt);
-               $('#'+id).removeClass("on-over");
-               $('#'+id).addClass("on-use");
                $('#'+useId).text(useTxt);
-               $('#'+useId).removeClass("on-use");
-               $('#'+useId).addClass("on-over");
+               $("#"+id).attr("onclick","use(this)");
             })
     });
 }
@@ -135,7 +134,8 @@ function use(id){
 	var id = $(id).attr('data-id')
 	var useId = id+"use";
 	var useTxt = $("#"+useId).html();
-	$('.index-tips').show(useTxt);
+	$(".index-title").html("您确定"+spanTxt+"此报告？");
+	$('.index-tips').show();
 
     //弹窗确定，取消操作
     $('.index-cancel').click(function(){
@@ -147,11 +147,8 @@ function use(id){
                 spanTxt = '下架'
                 useTxt = '使用中'
                $('#'+id).text(spanTxt);
-               $('#'+id).removeClass("on-use");
-               $('#'+id).addClass("on-over");
                $('#'+useId).text(useTxt);
-               $('#'+useId).removeClass("on-over");
-               $('#'+useId).addClass("on-use");
+               $("#"+id).attr("onclick","over(this)")
             })
     });
 }
