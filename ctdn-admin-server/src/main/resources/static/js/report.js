@@ -92,70 +92,31 @@ $('#table').bootstrapTable({
 function state(value,row,index){
     var state=row.state;
     var id = row.id;
-    var useId = id+"use";
     if(state==0){
-      state="<span class='on-use ' id="+useId+" onclick='use(this)' data-id="+id+">使用中</span>&nbsp;<span class='on-over' id="+id+" onclick='over(this)' data-id="+id+">下架</span>"
+      state="<span class='on-use '>使用中</span>&nbsp;<span class='on-over' onclick='over("+id+")'>下架</span>"
     }
     if(state==1){
-        state="<span class='on-over' id="+useId+" onclick='use(this)' data-id="+id+">启用</span>&nbsp;<span class='on-use' id="+id+" onclick='over(this)' data-id="+id+">已下架</span>"
+        state="<span class='on-over'>使用中</span>&nbsp;<span class='on-use' onclick='over("+id+")'>下架</span>"
     }
      return state;
 }
 
-//下架
 function over(id){
-	var spanTxt = $(id).html();
-	var id = $(id).attr('data-id')
-	var useId = id+"use";
-	var useTxt = $("#"+useId).html();
-	$('.index-tips').show(useTxt);
+	var spanTxt = $(this).text();
+	$('.index-head p').text(spanTxt);
+	$('.index-tips').show();
+    $.post("updateState/"+id,{"id":id},function(data){
 
-    //弹窗确定，取消操作
-    $('.index-cancel').click(function(){
-    	$(this).parents('.index-tips').hide();
-    });
-    $('.index-confirm').click(function(){
-    	$(this).parents('.index-tips').hide();
-    	 $.post("updateState/"+id,{"id":id},function(data){
-                spanTxt = '已下架'
-                useTxt = '启用'
-               $('#'+id).text(spanTxt);
-               $('#'+id).removeClass("on-over");
-               $('#'+id).addClass("on-use");
-               $('#'+useId).text(useTxt);
-               $('#'+useId).removeClass("on-use");
-               $('#'+useId).addClass("on-over");
-            })
-    });
+//        _query();
+    })
 }
-
-//启用
-function use(id){
-	var spanTxt = $(id).html();
-	var id = $(id).attr('data-id')
-	var useId = id+"use";
-	var useTxt = $("#"+useId).html();
-	$('.index-tips').show(useTxt);
-
-    //弹窗确定，取消操作
-    $('.index-cancel').click(function(){
-    	$(this).parents('.index-tips').hide();
-    });
-    $('.index-confirm').click(function(){
-    	$(this).parents('.index-tips').hide();
-    	 $.post("updateStateTo/"+id,{"id":id},function(data){
-                spanTxt = '下架'
-                useTxt = '使用中'
-               $('#'+id).text(spanTxt);
-               $('#'+id).removeClass("on-use");
-               $('#'+id).addClass("on-over");
-               $('#'+useId).text(useTxt);
-               $('#'+useId).removeClass("on-over");
-               $('#'+useId).addClass("on-use");
-            })
-    });
-}
-
+//弹窗确定，取消操作
+$('.index-cancel').click(function(){
+	$(this).parents('.index-tips').hide();
+});
+$('.index-confirm').click(function(){
+	$(this).parents('.index-tips').hide();
+});
 
 //报告标题
 function title(value,row,index){
