@@ -111,20 +111,18 @@ function over(id){
 	$(".index-title").html("您确定"+spanTxt+"此报告？");
 	$('.index-tips').show();
 
-
     //弹窗确定，取消操作
     $('.index-cancel').click(function(){
     	$(this).parents('.index-tips').hide();
     });
     $('.index-confirm').click(function(){
     	$(this).parents('.index-tips').hide();
-    	 $.post("updateState/"+id,{"id":id},function(data){
-                spanTxt = '启用'
-                useTxt = '已下架'
-               $('#'+id).text(spanTxt);
-               $('#'+useId).text(useTxt);
-               $("#"+id).attr("onclick","use(this)");
-            })
+    	 $.post("updateState/"+id,{"id":id},function(data){});
+            spanTxt = '启用'
+            useTxt = '已下架'
+           $('#'+id).text(spanTxt);
+           $('#'+useId).text(useTxt);
+           $("#"+id).attr("onclick","use(this)");
     });
 }
 
@@ -143,16 +141,14 @@ function use(id){
     });
     $('.index-confirm').click(function(){
     	$(this).parents('.index-tips').hide();
-    	 $.post("updateStateTo/"+id,{"id":id},function(data){
-                spanTxt = '下架'
-                useTxt = '使用中'
-               $('#'+id).text(spanTxt);
-               $('#'+useId).text(useTxt);
-               $("#"+id).attr("onclick","over(this)")
-            })
+    	 $.post("updateStateTo/"+id,{"id":id},function(data){});
+            spanTxt = '下架';
+            useTxt = '使用中';
+           $('#'+id).text(spanTxt);
+           $('#'+useId).text(useTxt);
+           $("#"+id).attr("onclick","over(this)");
     });
 }
-
 
 //报告标题
 function title(value,row,index){
