@@ -1,8 +1,10 @@
 package com.gi.ctdn.web;
 
 import com.gi.ctdn.pojo.Admin;
+import com.gi.ctdn.pojo.Report;
 import com.gi.ctdn.service.ReportService;
 import com.github.pagehelper.PageInfo;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -38,6 +40,7 @@ public class ReportController {
      * 报告列表
      * @return
      */
+    @ApiOperation(value="report列表")
     @RequestMapping(value = "/reports")
     @ResponseBody
     public MessageInfo<Pagination> reports(@RequestBody Map map){
@@ -45,15 +48,24 @@ public class ReportController {
         return messageInfo;
     }
 
+    @ApiOperation(value="更新report状态，state为0时")
     @RequestMapping(value="updateState/{id}")
     @ResponseBody
     public MessageInfo<Integer> updateState(@PathVariable Integer id){
         return  reportService.updateState(id);
     }
 
+    @ApiOperation(value="更新report状态，state为1时")
     @RequestMapping(value="updateStateTo/{id}")
     @ResponseBody
     public MessageInfo<Integer> updateStateTo(@PathVariable Integer id){
         return  reportService.updateStateTo(id);
+    }
+
+    @ApiOperation(value="创建report")
+    @RequestMapping(value="insertReport")
+    @ResponseBody
+    public MessageInfo<Integer> insertReport(@RequestBody Report report){
+        return  reportService.insertReport(report);
     }
 }

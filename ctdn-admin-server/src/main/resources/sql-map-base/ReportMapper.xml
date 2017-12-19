@@ -53,4 +53,13 @@
 		set state=0
 		where id=#{id}
 	</update>
+
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.gi.ctdn.pojo.Report">
+		<![CDATA[
+			insert app_report(title,publishDate,source,authorName,authorAvatar,authorDesc,listPic,
+			reportBody,pageNum,coverPic,reportDesc,fileUrl,type,state)
+			values(#{title},#{publishDate},#{source},#{authorName},#{authorAvatar},#{authorDesc},#{listPic},
+			#{reportBody},#{pageNum},#{coverPic},#{reportDesc},#{fileUrl},#{type},#{state})
+		]]>
+	</insert>
 </mapper>

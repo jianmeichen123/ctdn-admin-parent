@@ -46,6 +46,7 @@ public class ReportService {
         return messageInfo;
     }
 
+    //state为0(使用中)
     public MessageInfo<Integer> updateState(Integer id){
         MessageInfo<Integer> messageInfo = new MessageInfo<>();
         try{
@@ -61,6 +62,7 @@ public class ReportService {
         return messageInfo;
     }
 
+    //state为1(已下架)
     public MessageInfo<Integer> updateStateTo(Integer id){
         MessageInfo<Integer> messageInfo = new MessageInfo<>();
         try{
@@ -74,5 +76,21 @@ public class ReportService {
             LOGGER.error(e.getMessage());
         }
         return messageInfo;
+    }
+
+    //创建report
+    public MessageInfo<Integer> insertReport(Report report){
+        MessageInfo<Integer> messageInfo = new MessageInfo();
+        try{
+            Integer result = reportDAO.insert(report);
+            messageInfo.setData(result);
+            messageInfo.setStatus(MessageStatus.OK_CODE);
+            messageInfo.setMessage(MessageStatus.OK_MESSAGE);
+        }catch (Exception e){
+            messageInfo.setStatus(MessageStatus.ERROR_CODE);
+            messageInfo.setMessage(MessageStatus.ERROR_MESSAGE);
+            LOGGER.error(e.getMessage());
+        }
+        return  messageInfo;
     }
 }

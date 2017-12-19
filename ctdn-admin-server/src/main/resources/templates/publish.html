@@ -21,33 +21,25 @@
 	</ul>
 </div>
 <div class='content-box publish-content-box'>
+	<form action="#" id="form">
 	<div class='main-content publish'>
 		<ul>
-			<li><span class='publish-title'><em>*</em>报告标题</span><input class='publish-input' type='text'/><span class='publish-report-span'>发布报告</span></li>
-			<li><span class='publish-title'><em>*</em>发布时间</span><input  class='publish-time publish-time-row' id="publish_time" type='text'/><span class='publish-origin'><em>*</em>来源</span><input class='publish-time' type='text'/><span class='publish-report-span preview'>预览</span></li>
-			<li><span class='publish-title publish-user'>作者</span><input class='publish-time' type='text'/><span class='author-span'>作者头像</span><label class='author-label'>作者头像上传 <em>64*64</em><input class='publish-file' type='file'/></label></li>
-			<li><span class='publish-title publish-user-detail'>作者简介</span><textarea class='publish-user-textarea' rows="" cols=""></textarea></li>
+			<li><span class='publish-title'><em>*</em>报告标题</span><input class='publish-input' name="title" type='text'/><span class='publish-report-span'>发布报告</span></li>
+			<li><span class='publish-title'><em>*</em>发布时间</span><input  class='publish-time name="publishDate" publish-time-row' id="publish_time" readonly="readonly" type='text'/><span class='publish-origin'><em>*</em>来源</span><input class='publish-time' name="source" type='text'/><span class='publish-report-span preview'>预览</span></li>
+			<li><span class='publish-title publish-user'>作者</span><input class='publish-time' name="authorName" type='text'/><span class='author-span'>作者头像</span><label class='author-label'>作者头像上传 <em>64*64</em><input class='publish-file' type='file'/></label></li>
+			<li><span class='publish-title publish-user-detail'>作者简介</span><textarea class='publish-user-textarea' name="authorDesc" rows="" cols=""></textarea></li>
 			<li><span class='publish-title'><em>*</em>图片上传</span><label class='author-label'>列表图片上传<em>121*75</em><input class='publish-file' type='file'/></label></li>
 			<li>
 				<span class='publish-title fl'><em>*</em>报告正文</span>
-				<div class='publish-textarea-content'>
+				<div class='publish-textarea-content' name="reportBody">
 					<div class='publish-textarea-top'></div>
 					<script id="editor" type="text/plain" style="height:402px;"></script>
 				</div>
 			</li>
 		</ul>
-		
-		
-		
-	
-	
 	</div>
+	</form>
 </div>
-
-
-
-
-
 
 </body>
 <script src="js/jquery-1.12.3.min.js"></script>
@@ -63,6 +55,7 @@
 <script type="text/javascript" charset="utf-8" src="uEditor/ueditor.all.min.js"> </script>
 <script type="text/javascript" charset="utf-8" src="uEditor/lang/zh-cn/zh-cn.js"></script>
 <script src="layer/layer.js"></script>
+<script src="js/publish.js"></script>
 <script>
 $(function(){
 	$('#publish_time').datetimepicker({
