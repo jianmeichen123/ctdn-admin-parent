@@ -93,4 +93,36 @@ public class ReportService {
         }
         return  messageInfo;
     }
+
+    //根据id查询report
+    public MessageInfo<Report> getReportById(Integer id){
+        MessageInfo<Report> messageInfo = new MessageInfo<>();
+        try {
+            Report report = reportDAO.selectById(id);
+            messageInfo.setData(report);
+            messageInfo.setStatus(MessageStatus.OK_CODE);
+            messageInfo.setMessage(MessageStatus.OK_MESSAGE);
+        }catch (Exception e){
+            messageInfo.setStatus(MessageStatus.ERROR_CODE);
+            messageInfo.setMessage(MessageStatus.ERROR_MESSAGE);
+            LOGGER.error(e.getMessage());
+        }
+        return messageInfo;
+    }
+
+    //更新report
+    public MessageInfo<Integer> updateReport(Report report){
+        MessageInfo<Integer> messageInfo = new MessageInfo<>();
+        try {
+            Integer result = reportDAO.updateReport(report);
+            messageInfo.setData(result);
+            messageInfo.setStatus(MessageStatus.OK_CODE);
+            messageInfo.setMessage(MessageStatus.OK_MESSAGE);
+        }catch (Exception e){
+            messageInfo.setStatus(MessageStatus.ERROR_CODE);
+            messageInfo.setMessage(MessageStatus.ERROR_MESSAGE);
+            LOGGER.error(e.getMessage());
+        }
+        return  messageInfo;
+    }
 }

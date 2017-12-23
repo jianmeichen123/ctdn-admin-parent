@@ -62,4 +62,20 @@
 			#{reportBody},#{pageNum},#{coverPic},#{reportDesc},#{fileUrl},#{type},#{state})
 		]]>
 	</insert>
+
+	<select id="selectById" resultMap="ReportMap" parameterType="com.gi.ctdn.pojo.Report">
+		select
+		<include refid="BaseColumns"/>
+		from app_report
+		where id=#{id}
+	</select>
+
+	<update id="updateReport" >
+		update app_report
+		set
+		title=#{title},state=#{state},publishDate=#{publishDate},source=#{source},authorName=#{authorName},
+		authorAvatar=#{authorAvatar},authorDesc=#{authorDesc},listPic=#{authorDesc},reportBody=#{reportBody},
+		coverPic=#{coverPic},reportDesc=#{reportDesc},fileUrl=#{fileUrl},type=#{type}
+		where id=#{id}
+	</update>
 </mapper>

@@ -44,6 +44,12 @@ public class IndexController {
         return "/publish";
     }
 
+    @ApiOperation(value = "发布页面")
+    @RequestMapping(value = "/update", method = RequestMethod.GET)
+    public String update() {
+        return "/update";
+    }
+
     @RequestMapping(value = "/welcome", method = RequestMethod.GET)
     @ApiOperation(value = "欢迎页面")
     public String welcome() {
