@@ -1,6 +1,6 @@
 debug: false
 server:
-  context-path: /fms
+  context-path: /admin
   port: 8099
   tomcat:
     access_log_enabled: true
