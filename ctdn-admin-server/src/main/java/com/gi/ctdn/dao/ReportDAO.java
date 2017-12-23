@@ -16,4 +16,6 @@ public interface ReportDAO
     Integer updateReportState(@Param("id") Integer id);
     Integer updateState(@Param("id") Integer id);
     Integer insert(Report report);
+    Report selectById(@Param("id") Integer id);
+    Integer updateReport(Report report);
 }

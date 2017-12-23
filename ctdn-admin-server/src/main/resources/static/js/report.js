@@ -162,3 +162,10 @@ function title(value,row,index){
     }
     return title;
 }
+
+//修改
+function update(value,row,index){
+    var id = row.id;
+    var update ='<a href="update?id='+id+'">修改</a>';
+    return update;
+}

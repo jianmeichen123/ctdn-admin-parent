@@ -68,4 +68,18 @@ public class ReportController {
     public MessageInfo<Integer> insertReport(@RequestBody Report report){
         return  reportService.insertReport(report);
     }
+
+    @ApiOperation(value="根据id查询report")
+    @RequestMapping(value="getReport/{id}")
+    @ResponseBody
+    public MessageInfo<Report> getReport(@PathVariable Integer id){
+        return  reportService.getReportById(id);
+    }
+
+    @ApiOperation(value="更新report")
+    @RequestMapping(value="updateReport")
+    @ResponseBody
+    public MessageInfo<Integer> updateReport(@RequestBody Report report){
+        return  reportService.updateReport(report);
+    }
 }
