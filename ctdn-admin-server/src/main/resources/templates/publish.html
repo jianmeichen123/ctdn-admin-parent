@@ -31,9 +31,9 @@
 			<li><span class='publish-title'><em>*</em>图片上传</span><label class='author-label'>列表图片上传<em>121*75</em><input class='publish-file' type='file'/></label></li>
 			<li>
 				<span class='publish-title fl'><em>*</em>报告正文</span>
-				<div class='publish-textarea-content' >
+				<div class='publish-textarea-content'>
 					<div class='publish-textarea-top'></div>
-					<script  id="editor" type="text/plain" style="height:402px;" name="reportBody" required></script>
+					<script  required id="editor" type="text/plain" style="height:402px;" name="reportBody" ></script>
 				</div>
 			</li>
 		</ul>
@@ -67,7 +67,9 @@ $(function(){
 		  todayBtn:1,
 		  todayHightlight:true,
 		  pickerPosition:'bottom-right'
-	})
+	}).on('changeDate',function(ev){
+		$('#publish_time').next().hide();
+        });
 })
 
 /* 富文本编辑 */

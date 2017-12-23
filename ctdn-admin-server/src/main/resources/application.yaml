@@ -17,4 +17,4 @@ fms:
     excludes: /login
 
 upload:
-  rootPath:  /home/zcy/tmp
+  rootPath:  /home/wanghao/tmp

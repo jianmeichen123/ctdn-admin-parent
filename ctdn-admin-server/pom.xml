@@ -23,6 +23,7 @@
         <common.version>1.0-SNAPSHOT</common.version>
         <druid.version>1.0.26</druid.version>
         <thymeleaf.version>3.0.6.RELEASE</thymeleaf.version>
+        <start-class>com.gi.ctdn.CtdnAdminApplication</start-class>
     </properties>
     <profiles>
         <profile>
@@ -108,6 +109,10 @@
             <groupId>com.galaxyinternet</groupId>
             <artifactId>ctdn-admin-common</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
     </dependencies>
 </project>

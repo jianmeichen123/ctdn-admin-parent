@@ -1,21 +1,11 @@
 debug: false
 server:
-  context-path: /admin
+  context-path: /fms
   port: 8099
   tomcat:
     access_log_enabled: true
 
 spring:
-  redis:
-    database: 1
-    host: 10.11.8.9
-    port: 6379
-    password:
-    pool.max-active: 8
-    pool.max-wait: -1
-    pool.max-idle: 8
-    pool.min-idle: 30
-    timeout: 0
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource  
     url: jdbc:mysql://10.9.130.142:3306/ctdn?characterEncoding=utf-8
@@ -43,3 +33,4 @@ spring:
     cache-period: 0
   template:
     cache: false    
+
