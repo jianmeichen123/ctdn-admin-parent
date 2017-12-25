@@ -45,8 +45,23 @@ function query_data(){
            }
 //           querydata[$("#title").attr("data-field")] = $("#title").val();
            querydata["keyword"] = $("#title").val();
+//           var searchTitle  = $("#title").val();
+//           if(searchTitle){
+//           $(".index-nav-confirm").css("background","#66b8f5")
+//           }
+
+
            return querydata
 }
+
+$(function(){
+   $(".index-nav-title").blur(function(){
+        var searchTitle  = $("#title").val();
+        if(searchTitle){
+            $(".index-nav-confirm").css("background","#66b8f5")
+           }
+   })
+})
 
 //分页参数
 function queryParams(params) {  //配置参数
