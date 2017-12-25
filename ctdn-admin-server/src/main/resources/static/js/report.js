@@ -166,6 +166,12 @@ function title(value,row,index){
 //修改
 function update(value,row,index){
     var id = row.id;
-    var update ='<a href="update?id='+id+'">修改</a>';
+    var state = row.state;
+    if(state==0){
+        var update ='<a href="update?id='+id+'">修改</a>';
+    }
+    if(state==1){
+        var update = '<p>详情</p>'
+    }
     return update;
 }
