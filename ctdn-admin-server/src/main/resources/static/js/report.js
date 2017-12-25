@@ -54,11 +54,12 @@ function query_data(){
            return querydata
 }
 
+//确定按钮
 $(function(){
-   $(".index-nav-title").blur(function(){
+   $(".index-nav-title").mouseleave(function(){
         var searchTitle  = $("#title").val();
         if(searchTitle){
-            $(".index-nav-confirm").css("background","#66b8f5")
+                $(".index-nav-confirm").css("background","#66b8f5")
            }
    })
 })
