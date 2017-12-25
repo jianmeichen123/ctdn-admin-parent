@@ -152,12 +152,14 @@ $(function(){
     }).on('changeDate',function(ev){
   	 /* var startTime = $('#publish_time_start').val();
   	 $('#publish_time_start').datetimepicker('hide'); */
-  	 var startTime = $('#publish_time_start').val();
+  	 	var startTime = $('#publish_time_start').val();
  	 	 var endTime = $('#publish_time_end').val();
  	 		if(startTime!=""&&endTime!=""){
  	 		beTimeCompare(startTime,endTime)
  	 	}
-  	 
+       if(startTime||endTime){
+        $(".index-nav-confirm").css("background","#66b8f5")
+       }
     });
    
     $('#publish_time_end').datetimepicker({
