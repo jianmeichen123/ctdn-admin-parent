@@ -187,7 +187,7 @@ function update(value,row,index){
         var update ='<a href="update?id='+id+'">修改</a>';
     }
     if(state==0){
-        var update = '<p>详情</p>'
+        var update = '<a href="http://ctdnqa.gi.com//report_detailed.html?id='+id+'"><p>详情</p></a>'
     }
     return update;
 }

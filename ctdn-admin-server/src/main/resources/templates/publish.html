@@ -17,7 +17,7 @@
 </header>
 <div class='menu index-menu'>
 	<ul>
-		<li><span class="menu-icon"></span><a href='javascript:;'>行研报告</a></li>
+		<li><span class="menu-icon"></span><a href='http://ctdnqa.gi.com//report_list.html'>行研报告</a></li>
 	</ul>
 </div>
 <div class='content-box publish-content-box'>
@@ -26,14 +26,14 @@
 		<ul>
 			<li><span class='publish-title'><em>*</em>报告标题</span><input required class='publish-input' maxlength="20" name="title" type='text'/><span class='publish-report-span publish-report' type="submit">发布报告</span></li>
 			<li><span class='publish-title'><em>*</em>发布时间</span><input required class='publish-time publish-time-row' name="publishDate"  id="publish_time" readonly="readonly" type='datetime'/><span class='publish-origin'><em>*</em>来源</span><input required class='publish-time' name="source" type='text'/><span class='publish-report-span preview'>预览</span></li>
-			<li><span class='publish-title publish-user'>作者</span><input class='publish-time' name="authorName" type='text'/><span class='author-span'>作者头像</span><label class='author-label'>作者头像上传 <em>64*64</em><input class='publish-file' type='file'/></label></li>
+			<li><span class='publish-title publish-user'>作者</span><input class='publish-time' name="authorName" type='text'/><span class='author-span'>作者头像</span><label class='author-label'>作者头像上传 <em>64*64</em><input class='publish-file' type='file' id="authorPic"/></label></li>
 			<li><span class='publish-title publish-user-detail'>作者简介</span><textarea class='publish-user-textarea' name="authorDesc" rows="" cols=""></textarea></li>
-			<li><span class='publish-title'><em>*</em>图片上传</span><label class='author-label'>列表图片上传<em>121*75</em><input class='publish-file' type='file'/></label></li>
-			<li>
+			<li><span class='publish-title'><em>*</em>图片上传</span><label class='author-label'>列表图片上传<em>121*75</em><input class='publish-file' name="listPic" type='file'/ required></label></li>
+			<li required>
 				<span class='publish-title fl'><em>*</em>报告正文</span>
 				<div class='publish-textarea-content'>
 					<div class='publish-textarea-top'></div>
-					<script  required id="editor" type="text/plain" style="height:402px;" name="reportBody" ></script>
+					<script  id="editor" type="text/plain" style="height:402px;" name="reportBody"></script>
 				</div>
 			</li>
 		</ul>
@@ -43,7 +43,6 @@
 
 </body>
 <script src="js/jquery-1.12.3.min.js"></script>
-<!-- bootstrapTable -->
 <script src="bootstrap-3.3.7/dist/js/bootstrap.js"></script>
 <script src="bootstrap-table-develop/dist/bootstrap-table.js"></script>
 <script src="bootstrap-table-develop/dist/locale/bootstrap-table-zh-CN.js"></script>
@@ -56,7 +55,11 @@
 <script type="text/javascript" charset="utf-8" src="uEditor/lang/zh-cn/zh-cn.js"></script>
 <script src="layer/layer.js"></script>
 <script src="js/publish.js"></script>
+<script src="js/common.js"></script>
 <script src="js/jquery.validate.js"></script>
+<script src="js/jquery.fileupload.js"></script>
+<script src="js/jquery.fileupload-validate.js"></script>
+<script src="js/jquery.ui.widget.js"></script>
 <script>
 $(function(){
 	$('#publish_time').datetimepicker({
