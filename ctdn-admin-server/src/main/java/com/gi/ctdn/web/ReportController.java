@@ -82,4 +82,11 @@ public class ReportController {
     public MessageInfo<Integer> updateReport(@RequestBody Report report){
         return  reportService.updateReport(report);
     }
+
+    @ApiOperation(value="预览report")
+    @RequestMapping(value="previewReport")
+    @ResponseBody
+    public MessageInfo<Report> previewReport(){
+        return  reportService.getLastReport();
+    }
 }

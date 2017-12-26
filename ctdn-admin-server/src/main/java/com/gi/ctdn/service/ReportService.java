@@ -125,4 +125,20 @@ public class ReportService {
         }
         return  messageInfo;
     }
+
+    //预览
+    public MessageInfo<Report> getLastReport(){
+        MessageInfo<Report> messageInfo = new MessageInfo<>();
+        try{
+            Report report = reportDAO.selectLast();
+            messageInfo.setData(report);
+            messageInfo.setStatus(MessageStatus.OK_CODE);
+            messageInfo.setMessage(MessageStatus.OK_MESSAGE);
+        }catch (Exception e){
+            messageInfo.setStatus(MessageStatus.ERROR_CODE);
+            messageInfo.setMessage(MessageStatus.ERROR_MESSAGE);
+            LOGGER.error(e.getMessage());
+        }
+        return messageInfo;
+    }
 }

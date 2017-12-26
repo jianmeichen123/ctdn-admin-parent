@@ -18,4 +18,5 @@ public interface ReportDAO
     Integer insert(Report report);
     Report selectById(@Param("id") Integer id);
     Integer updateReport(Report report);
+    Report selectLast();
 }
