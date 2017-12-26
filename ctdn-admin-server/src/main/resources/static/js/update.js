@@ -49,6 +49,7 @@ $.fn.serializeJson = function(){
 		return data;
 	}
 
+//更新
 function update(){
     var url ="updateReport"
     var data = JSON.stringify($("#form").serializeJson());
@@ -71,3 +72,7 @@ function update(){
         }
     })
 }
+
+$(".preview").click(function(){
+    location.href="http://ctdnqa.gi.com//report_detailed.html?id="+id;
+})

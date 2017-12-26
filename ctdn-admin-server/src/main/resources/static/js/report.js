@@ -124,6 +124,7 @@ function over(id){
 	var id = $(id).attr('data-id')
 	var useId = id+"use";
 	var useTxt = $("#"+useId).html();
+	var staTxt= $("#sta"+id).html();
 	$(".index-title").html("您确定"+spanTxt+"此报告？");
 	$('.index-tips').show();
 
@@ -136,8 +137,10 @@ function over(id){
     	 $.post("updateState/"+id,{"id":id},function(data){});
             spanTxt = '启用'
             useTxt = '已下架'
+            staTxt='修改'
            $('#'+id).text(spanTxt);
            $('#'+useId).text(useTxt);
+           $("#sta"+id).text(staTxt);
            $("#"+id).attr("onclick","use(this)");
     });
 }
@@ -148,6 +151,7 @@ function use(id){
 	var id = $(id).attr('data-id')
 	var useId = id+"use";
 	var useTxt = $("#"+useId).html();
+	var staTxt= $("#sta"+id).html();
 	$(".index-title").html("您确定"+spanTxt+"此报告？");
 	$('.index-tips').show();
 
@@ -160,8 +164,10 @@ function use(id){
     	 $.post("updateStateTo/"+id,{"id":id},function(data){});
             spanTxt = '下架';
             useTxt = '使用中';
+            staTxt = '详情';
            $('#'+id).text(spanTxt);
            $('#'+useId).text(useTxt);
+           $("#sta"+id).text(staTxt);
            $("#"+id).attr("onclick","over(this)");
     });
 }
@@ -184,10 +190,10 @@ function update(value,row,index){
     var id = row.id;
     var state = row.state;
     if(state==1){
-        var update ='<a href="update?id='+id+'">修改</a>';
+        var update ='<a href="update?id='+id+'"><p id="sta'+id+'">修改</p></a>';
     }
     if(state==0){
-        var update = '<a href="http://ctdnqa.gi.com//report_detailed.html?id='+id+'"><p>详情</p></a>'
+        var update = '<a href="http://ctdnqa.gi.com//report_detailed.html?id='+id+'"><p id="sta'+id+'">详情</p></a>'
     }
     return update;
 }
