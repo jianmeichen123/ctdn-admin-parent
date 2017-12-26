@@ -78,4 +78,11 @@
 		coverPic=#{coverPic},reportDesc=#{reportDesc},fileUrl=#{fileUrl},type=#{type}
 		where id=#{id}
 	</update>
+
+	<select id="selectLast" resultMap="ReportMap" parameterType="com.gi.ctdn.pojo.Report">
+		select
+		<include refid="BaseColumns"/>
+		from app_report
+		order by id desc limit 1
+	</select>
 </mapper>
