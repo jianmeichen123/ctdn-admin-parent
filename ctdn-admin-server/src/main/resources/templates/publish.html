@@ -25,8 +25,8 @@
 	<div class='main-content publish'>
 		<ul>
 			<li><span class='publish-title'><em>*</em>报告标题</span><input required class='publish-input' maxlength="200" name="title" type='text' placeholder="最多输入200个字符"/><span class='publish-report-span publish-report' type="submit">发布报告</span></li>
-			<li><span class='publish-title'><em>*</em>发布时间</span><input required class='publish-time publish-time-row' name="publishDate"  id="publish_time" readonly="readonly" type='datetime'/><span class='publish-origin'><em>*</em>来源</span><input required class='publish-time' name="source" type='text'/><span class='publish-report-span preview'>预览</span></li>
-			<li><span class='publish-title publish-user'>作者</span><input class='publish-time' name="authorName" type='text'/><span class='author-span'>作者头像</span><label class='author-label'>作者头像上传 <em>64*64</em><input class='publish-file' type='file' id="authorPic"/></label></li>
+			<li><span class='publish-title'><em>*</em>发布时间</span><input required class='publish-time publish-time-row' name="publishDate"  id="publish_time" readonly="readonly" type='datetime'/><span class='publish-origin'><em>*</em>来源</span><input required maxlength="50"  placeholder="最多输入50个字符" class='publish-time' name="source" type='text'/><span class='publish-report-span preview'>预览</span></li>
+			<li><span class='publish-title publish-user'>作者</span><input class='publish-time' maxlength="50" name="authorName" type='text' placeholder="最多输入50个字符"/><span class='author-span'>作者头像</span><label class='author-label'>作者头像上传 <em>64*64</em><input class='publish-file' type='file' id="authorPic"/></label></li>
 			<li><span class='publish-title publish-user-detail'>作者简介</span><textarea class='publish-user-textarea' maxlength="200" name="authorDesc" rows="" cols="" placeholder="最多输入200个字符"></textarea></li>
 			<li><span class='publish-title'><em>*</em>图片上传</span><label class='author-label'>列表图片上传<em>121*75</em><input class='publish-file' name="listPic" type='file'/ required></label></li>
 			<li required>
