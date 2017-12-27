@@ -32,6 +32,7 @@
 		<if test="null !=keyword and ''!=keyword">title like CONCAT('%',#{keyword},'%')</if>
 		<if test="null !=startDate and ''!=startDate">and publishDate >= #{startDate}</if>
 		<if test="null !=endDate and ''!=endDate"><![CDATA[and publishDate < #{endDate}]]></if>
+			and state !=2
 		</where>
 		order by publishDate desc
 	</select>
