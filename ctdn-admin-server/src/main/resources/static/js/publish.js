@@ -81,7 +81,7 @@ function preview(){
             if(data.message == 'OK')
             {
               $.get("previewReport",function(data){
-                    location.href="http://ctdnqa.gi.com//report_detailed.html?id="+data.data.id
+                    window.open("http://ctdnqa.gi.com//report_detailed.html?id="+data.data.id,"_blank");
               })
             }
             else
