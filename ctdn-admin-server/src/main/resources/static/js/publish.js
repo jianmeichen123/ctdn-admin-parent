@@ -17,7 +17,17 @@ $(function(){
                  if(num==2){
                     preview();
                  }
-            }
+            },
+
+        errorElement: 'label',
+          /* errorPlacement: function(error, element) {
+      6           *//*  error.insertAfter(element)*//*
+                    error.appendTo(element.next());
+      8     }*/
+
+
+
+
         })
     //保存
    $('.publish-report').click(function(){
@@ -131,20 +141,11 @@ $("#authorPic").fileupload({
          's_':getCookie('s_'),
         },
 		add: function (e, data) {
-//			if(data.files[0].size > 25*1024*1024){
-//				$("#projPbName").text("上传商业计划书，文件大小请限制在25M之内")
-//				$("#projPbName").addClass("red")
-//				return;
-//			}
-//			$("#projPbName").text("正在上传文件...")
-//			$("#projPbName").removeClass("red")
             data.submit();
         },
 		done: function (e, data) {
 			if(data.result.success)
 			{
-//				$("#projPbName").removeClass("red")
-//				$("#projPbName").text(data.result.uploadFiles[0].fileName);
 				$("input[name='fileName']").val(data.result.uploadFiles[0].fileName)
 				$("input[name='fileKey']").val(data.result.uploadFiles[0].fileUploadName)
 				$("input[name='fileUrl']").val(data.result.uploadFiles[0].url)
@@ -156,3 +157,5 @@ $("#authorPic").fileupload({
 			}
 		}
 })
+
+
