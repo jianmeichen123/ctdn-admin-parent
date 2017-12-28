@@ -180,9 +180,34 @@ function title(value,row,index){
        listPic =  './img/table-pic.png'
     }
     if(title){
-        title="<img src='"+listPic+"'/><span>"+row.title+"</span>"
+        if(title.length>25){
+            title = title.substring(0,25)+"...";
+        }
+        title="<img src='"+listPic+"'/><span>"+title+"</span>"
     }
     return title;
+}
+
+//作者名字
+function authorName(value,row,index){
+    var authorName = row.authorName
+    if(authorName){
+        if(authorName.length>4){
+            authorName = authorName.substring(0,4)+"...";
+        }
+        return authorName;
+    }
+}
+
+//来源
+function source(value,row,index){
+    var source = row.source;
+    if(source){
+        if(source.length>5){
+            source = source.substring(0,5)+"..."
+        }
+        return source;
+    }
 }
 
 //修改
