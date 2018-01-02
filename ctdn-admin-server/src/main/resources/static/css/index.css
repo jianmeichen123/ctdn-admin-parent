@@ -92,7 +92,7 @@ font-size:14px;
 .index-table-content table>tbody tr td:nth-child(6){margin:0px;}
 .pic .picture-content{width:64px;height:64px;border:1px solid;display:inline-block;vertical-align:middle;border-radius:3px;position:relative;margin-left:10px;display:none;}
 .picture-content  em{right:-12px;top:-3px;color:#fff;text-align:center;cursor:pointer;transform:rotate(46deg);display:inline-block;position:absolute;width:18px;height:18px; border-left:18px solid transparent;border-right:18px solid transparent;border-bottom:18px solid red;}
-.picture-big{width:120px;height:75px;}
+.pic  .picture-big{width:120px;height:75px;}
 .picture-content   img{width:64px;height:64px;}
 .picture-big img{width:120px;height:75px;}
 /*登录页面*/

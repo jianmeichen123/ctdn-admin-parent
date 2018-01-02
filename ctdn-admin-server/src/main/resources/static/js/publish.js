@@ -154,6 +154,8 @@ $("#authorPic").fileupload({
 				$("input[name='fileSize']").val(data.result.uploadFiles[0].fileLength)
                 $(".pic_one img").attr('src',data.result.uploadFiles[0].url);
                 $(".pic_one").css("display",'inline-block');
+                $('.author-label_one').css('display','none');
+
 			}
 			else
 			{
@@ -197,6 +199,7 @@ $("#listPic").fileupload({
 				$("input[name='projectLogo']").val(data.result.uploadFiles[0].url)*/
 				$(".picture-big img").attr('src',data.result.uploadFiles[0].url);
                 $(".picture-big").css("display",'inline-block');
+                 $('.author-label_two').css('display','none');
 			}
 			else
 			{
