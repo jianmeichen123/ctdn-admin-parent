@@ -140,7 +140,7 @@ $.fn.serializeJsonPre = function(){
 
 //上传
 $("#authorPic").fileupload({
-		url:'http://ctdnqa.gi.com/cloudstorage/upload/image',
+		url:'http://ctdndev.gi.com/cloudstorage/upload/image',
 		formData:{},
 		headers:{
          '_uid_':getCookie('_uid_'),
@@ -165,8 +165,12 @@ $("#authorPic").fileupload({
 })
 
 $("#listPic").fileupload({
-		url:'http://ctdnqa.gi.com/cloudstorage/upload/image',
+		url:'http://ctdndev.gi.com/cloudstorage/upload/image',
 		formData:{},
+		headers:{
+             '_uid_':getCookie('_uid_'),
+             's_':getCookie('s_'),
+        },
 		add: function (e, data) {
 			var acceptFileTypes = /\/(jpg|jpeg|png|gif)$/i;
 			if(data.originalFiles[0]['type'].length && !acceptFileTypes.test(data.originalFiles[0]['type'])) {
@@ -177,10 +181,10 @@ $("#listPic").fileupload({
 //				$("#projLogoName").html("<font color='red'>*您的文件大小超过限制，请控制在500KB之内</font>")
 				return;
 			}
-			if(data.file[0].name.length>200){
-//				$("#projLogoName").text("文件名过长不能超过200个字...")
-				return;
-			}
+//			if(data.file[0].name.length>200){
+////				$("#projLogoName").text("文件名过长不能超过200个字...")
+//				return;
+//			}
 //			$("#projLogoName").text("")
             data.submit();
         },
