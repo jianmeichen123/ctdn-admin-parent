@@ -140,7 +140,7 @@ $.fn.serializeJsonPre = function(){
 
 //上传
 $("#authorPic").fileupload({
-		url:'http://127.0.0.1:8086/cloudstorage/upload/image',
+		url:'http://ctdnqa.gi.com/cloudstorage/upload/image',
 		formData:{},
 		headers:{
          '_uid_':getCookie('_uid_'),
@@ -165,7 +165,7 @@ $("#authorPic").fileupload({
 })
 
 $("#listPic").fileupload({
-		url:'http://127.0.0.1:8086/cloudstorage/upload/image',
+		url:'http://ctdnqa.gi.com/cloudstorage/upload/image',
 		formData:{},
 		add: function (e, data) {
 			var acceptFileTypes = /\/(jpg|jpeg|png|gif)$/i;
