@@ -13,10 +13,6 @@ $(function(){
                     alert('title');
                     return;
                 }
-                 if(!reportBody){
-                        alert("reportBody");
-                        return;
-                    }
                  if(num==1){
                     save();
                  }
@@ -210,3 +206,11 @@ $("#listPic").fileupload({
 	});
 
 
+/*close*/
+$('. pic_one  em').click(function(){
+    $(this).closest('.picture-content').css('display',"none");
+});
+
+$('.  picture-big  em').click(function(){
+    $(this).closest('.picture-content').css('display',"none");
+});
