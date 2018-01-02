@@ -113,6 +113,7 @@ public class IndexController {
         Cookie cookie = new Cookie(k,v);//创建新cookie
         cookie.setMaxAge( 60*60*24*7);
         cookie.setDomain(domain);
+        cookie.setPath("/");
         response.addCookie(cookie);//将cookie添加到response的cookie数组中返回给客户端
     }
 }
