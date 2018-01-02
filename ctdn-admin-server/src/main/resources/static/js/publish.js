@@ -7,10 +7,16 @@ $(function(){
         $("#form").validate({
             submitHandler: function() {
                 var title = $("input[name='title']").val();
+                var reportBody = $("input[name='reportBody']").val();
+                console.log('reportBody:',reportBody)
                 if(!title){
-                    $(".publish-title").addClass("red")
+                    alert('title');
                     return;
                 }
+                 if(!reportBody){
+                        alert("reportBody");
+                        return;
+                    }
                  if(num==1){
                     save();
                  }
@@ -134,7 +140,7 @@ $.fn.serializeJsonPre = function(){
 
 //上传
 $("#authorPic").fileupload({
-		url:'http://127.0.0.1/cloudstorage/upload',
+		url:'http://127.0.0.1:8086/cloudstorage/upload/image',
 		formData:{},
 		headers:{
          '_uid_':getCookie('_uid_'),
@@ -157,5 +163,42 @@ $("#authorPic").fileupload({
 			}
 		}
 })
+
+$("#listPic").fileupload({
+		url:'http://127.0.0.1:8086/cloudstorage/upload/image',
+		formData:{},
+		add: function (e, data) {
+			var acceptFileTypes = /\/(jpg|jpeg|png|gif)$/i;
+			if(data.originalFiles[0]['type'].length && !acceptFileTypes.test(data.originalFiles[0]['type'])) {
+//				$("#projLogoName").html("<font color='red'>*您的文件格式不正确</font>")
+				return;
+			}
+			if(data.files[0].size > 500*1024*1024){
+//				$("#projLogoName").html("<font color='red'>*您的文件大小超过限制，请控制在500KB之内</font>")
+				return;
+			}
+			if(data.file[0].name.length>200){
+//				$("#projLogoName").text("文件名过长不能超过200个字...")
+				return;
+			}
+//			$("#projLogoName").text("")
+            data.submit();
+        },
+        messages: {
+			maxFileSize: 'File exceeds maximum allowed size of 5b'
+		},
+		done: function (e, data) {
+			if(data.result.success)
+			{
+				$(".picture-content img").attr("src",data.result.uploadFiles[0].url);
+				$(".picture-content").show()
+				$("input[name='projectLogo']").val(data.result.uploadFiles[0].url)
+			}
+			else
+			{
+				$("#projLogoName").text(data.result.msg);
+			}
+		}
+	});
 
 
