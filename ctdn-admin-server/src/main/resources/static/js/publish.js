@@ -207,10 +207,10 @@ $("#listPic").fileupload({
 
 
 /*close*/
-$('. pic_one  em').click(function(){
+$('.pic_one  em').click(function(){
     $(this).closest('.picture-content').css('display',"none");
 });
 
-$('.  picture-big  em').click(function(){
+$('.picture-big  em').click(function(){
     $(this).closest('.picture-content').css('display',"none");
 });
