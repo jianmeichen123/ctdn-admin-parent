@@ -76,3 +76,107 @@ function update(){
 $(".preview").click(function(){
     location.href="http://ctdnqa.gi.com//report_detailed.html?id="+id;
 })
+
+
+
+ function getCookie(c_name)
+     {
+     	if (document.cookie.length>0)
+     	{
+     		c_start=document.cookie.indexOf(c_name + "=")
+     		if (c_start!=-1)
+     		{
+                 c_start=c_start + c_name.length+1
+                 c_end=document.cookie.indexOf(";",c_start)
+                 if (c_end==-1) c_end=document.cookie.length
+                 return unescape(document.cookie.substring(c_start,c_end))
+             }
+     	}
+     	return ""
+     }
+
+//上传
+$("#authorPic").fileupload({
+		url:'http://ctdnqa.gi.com/cloudstorage/upload/image',
+		formData:{},
+		headers:{
+         '_uid_':getCookie('_uid_'),
+         's_':getCookie('s_'),
+        },
+		add: function (e, data) {
+            data.submit();
+        },
+		done: function (e, data) {
+			if(data.result.success)
+			{
+				$("input[name='fileName']").val(data.result.uploadFiles[0].fileName)
+				$("input[name='fileKey']").val(data.result.uploadFiles[0].fileUploadName)
+				$("input[name='fileUrl']").val(data.result.uploadFiles[0].url)
+				$("input[name='fileSize']").val(data.result.uploadFiles[0].fileLength)
+                $(".pic_one img").attr('src',data.result.uploadFiles[0].url);
+                $(".pic_one").css("display",'inline-block');
+                $('.author-label_one').css('display','none');
+
+			}
+			else
+			{
+                console.log("log:",1)
+			}
+		}
+})
+
+$("#listPic").fileupload({
+		url:'http://ctdnqa.gi.com/cloudstorage/upload/image',
+		formData:{},
+		headers:{
+             '_uid_':getCookie('_uid_'),
+             's_':getCookie('s_'),
+        },
+		add: function (e, data) {
+			var acceptFileTypes = /\/(jpg|jpeg|png|gif)$/i;
+			if(data.originalFiles[0]['type'].length && !acceptFileTypes.test(data.originalFiles[0]['type'])) {
+//				$("#projLogoName").html("<font color='red'>*您的文件格式不正确</font>")
+				return;
+			}
+			if(data.files[0].size > 500*1024*1024){
+//				$("#projLogoName").html("<font color='red'>*您的文件大小超过限制，请控制在500KB之内</font>")
+				return;
+			}
+//			if(data.file[0].name.length>200){
+////				$("#projLogoName").text("文件名过长不能超过200个字...")
+//				return;
+//			}
+//			$("#projLogoName").text("")
+            data.submit();
+        },
+        messages: {
+			maxFileSize: 'File exceeds maximum allowed size of 5b'
+		},
+		done: function (e, data) {
+			if(data.result.success)
+			{
+				/*$(".picture-content img").attr("src",data.result.uploadFiles[0].url);
+				$(".picture-content").show()
+				$("input[name='projectLogo']").val(data.result.uploadFiles[0].url)*/
+				$(".picture-big img").attr('src',data.result.uploadFiles[0].url);
+                $(".picture-big").css("display",'inline-block');
+                 $('.author-label_two').css('display','none');
+			}
+			else
+			{
+				$("#projLogoName").text(data.result.msg);
+			}
+		}
+	});
+
+
+/*close*/
+$('.pic_one  em').click(function(){
+    $(this).closest('.picture-content').css('display',"none");
+    $('.author-label_one').css('display','inline-block');
+});
+
+$('.picture-big  em').click(function(){
+    $(this).closest('.picture-content').css('display',"none");
+     $('.author-label_two').css('display','inline-block');
+});
