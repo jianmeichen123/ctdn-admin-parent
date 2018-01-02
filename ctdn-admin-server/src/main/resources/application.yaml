@@ -18,5 +18,4 @@ fms:
 
 upload:
   rootPath:  /home/wanghao/tmp
-
-domain:ctdndev.gi.com
+domain: ctdnqa.gi.com
