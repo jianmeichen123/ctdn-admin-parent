@@ -212,8 +212,10 @@ $("#listPic").fileupload({
 /*close*/
 $('.pic_one  em').click(function(){
     $(this).closest('.picture-content').css('display',"none");
+    $('.author-label_one').css('display','inline-block');
 });
 
 $('.picture-big  em').click(function(){
     $(this).closest('.picture-content').css('display',"none");
+     $('.author-label_two').css('display','inline-block');
 });
