@@ -140,7 +140,7 @@ $.fn.serializeJsonPre = function(){
 
 //上传
 $("#authorPic").fileupload({
-		url:'http://ctdnqa.gi.com/cloudstorage/upload/image',
+		url:'http://127.0.0.1:8086/cloudstorage/upload/image',
 		formData:{},
 		headers:{
          '_uid_':getCookie('_uid_'),
@@ -156,8 +156,8 @@ $("#authorPic").fileupload({
 				$("input[name='fileKey']").val(data.result.uploadFiles[0].fileUploadName)
 				$("input[name='fileUrl']").val(data.result.uploadFiles[0].url)
 				$("input[name='fileSize']").val(data.result.uploadFiles[0].fileLength)
-                $(".pic_one img").attr('src',"data.result.uploadFiles[0].url");
-                $(".pic_one").css("display",'block');
+                $(".pic_one img").attr('src',data.result.uploadFiles[0].url);
+                $(".pic_one").css("display",'inline-block');
 			}
 			else
 			{
@@ -167,7 +167,7 @@ $("#authorPic").fileupload({
 })
 
 $("#listPic").fileupload({
-		url:'http://ctdnqa.gi.com/cloudstorage/upload/image',
+		url:'http://127.0.0.1:8086/cloudstorage/upload/image',
 		formData:{},
 		headers:{
              '_uid_':getCookie('_uid_'),
@@ -196,9 +196,11 @@ $("#listPic").fileupload({
 		done: function (e, data) {
 			if(data.result.success)
 			{
-				$(".picture-content img").attr("src",data.result.uploadFiles[0].url);
+				/*$(".picture-content img").attr("src",data.result.uploadFiles[0].url);
 				$(".picture-content").show()
-				$("input[name='projectLogo']").val(data.result.uploadFiles[0].url)
+				$("input[name='projectLogo']").val(data.result.uploadFiles[0].url)*/
+				$(".picture-big img").attr('src',data.result.uploadFiles[0].url);
+                $(".picture-big").css("display",'inline-block');
 			}
 			else
 			{
