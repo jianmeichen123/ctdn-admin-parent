@@ -9,6 +9,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
@@ -27,7 +28,8 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
     private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
-    private  String domain = "dtdnqa.gi.com";
+    @Value("${domain}")
+    private  String domain;
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
     @Autowired
