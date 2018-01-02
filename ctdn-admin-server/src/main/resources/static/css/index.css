@@ -90,9 +90,9 @@ font-size:14px;
 .th-inner {font-weight:normal !important;}
 .index-table-content table>tbody tr td:nth-child(6) a>p{color:#66b8f5;}
 .index-table-content table>tbody tr td:nth-child(6){margin:0px;}
-
-
-
+.pic .picture-content{width:64px;height:64px;border:1px solid;display:inline-block;vertical-align:middle;border-radius:3px;position:relative;margin-left:10px;display:none;}
+.picture-content  em{right:-12px;top:-3px;color:#fff;text-align:center;cursor:pointer;transform:rotate(46deg);display:inline-block;position:absolute;width:18px;height:18px; border-left:18px solid transparent;border-right:18px solid transparent;border-bottom:18px solid red;}
+.picture-big{width:120px;height:75px;}
 
 /*登录页面*/
 .login-content{width:100%;height:auto;margin-top:90px;}

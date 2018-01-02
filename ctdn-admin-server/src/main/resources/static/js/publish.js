@@ -156,6 +156,8 @@ $("#authorPic").fileupload({
 				$("input[name='fileKey']").val(data.result.uploadFiles[0].fileUploadName)
 				$("input[name='fileUrl']").val(data.result.uploadFiles[0].url)
 				$("input[name='fileSize']").val(data.result.uploadFiles[0].fileLength)
+                $(".pic_one img").attr('src',"data.result.uploadFiles[0].url");
+                $(".pic_one").css("display",'block');
 			}
 			else
 			{
