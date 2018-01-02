@@ -28,8 +28,7 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
     private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
-    @Value("${domain}")
-    private  String domain;
+    private  String domain = "ctdnqa.gi.com";
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
     @Autowired
@@ -112,8 +111,8 @@ public class IndexController {
 
     public void addCookie(HttpServletResponse response,String k,String v){
         Cookie cookie = new Cookie(k,v);//创建新cookie
-        cookie.setMaxAge( 60*60*24*7);// 设置存在时间为5分钟
-        cookie.setPath(domain);//设置作用域
+        cookie.setMaxAge( 60*60*24*7);
+        cookie.setDomain(domain);
         response.addCookie(cookie);//将cookie添加到response的cookie数组中返回给客户端
     }
 }
