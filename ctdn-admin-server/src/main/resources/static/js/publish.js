@@ -43,6 +43,8 @@ $(function(){
       })
 })
 
+var authorAvatar='';
+var listPic='';
 
 //保存
 $.fn.serializeJson = function(){
@@ -50,11 +52,16 @@ $.fn.serializeJson = function(){
 		var array = this.serializeArray();
 		data["state"]=0;
 		$.each(array,function(){
-			data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
+		    if(this.name.indexOf("authorAvatar")>0){
+		        data["authorAvatar"] = authorAvatar;
+		    }else if(this.name.indexOf("listPic")>0){
+		        data["listPic"] = listPic;
+		    }else{
+		        data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
+		    }
 		})
 		return data;
 	}
-
 
 //保存
 function save(){
@@ -155,7 +162,7 @@ $("#authorPic").fileupload({
                 $(".pic_one img").attr('src',data.result.uploadFiles[0].url);
                 $(".pic_one").css("display",'inline-block');
                 $('.author-label_one').css('display','none');
-
+                authorAvatar = data.result.uploadFiles[0].url;
 			}
 			else
 			{
@@ -200,6 +207,7 @@ $("#listPic").fileupload({
 				$(".picture-big img").attr('src',data.result.uploadFiles[0].url);
                 $(".picture-big").css("display",'inline-block');
                  $('.author-label_two').css('display','none');
+                 listPic = data.result.uploadFiles[0].url;
 			}
 			else
 			{
