@@ -107,7 +107,7 @@ function preview(){
             if(data.message == 'OK')
             {
               $.get("previewReport",function(data){
-                    window.open("http://ctdnrc.galaxyinternet.com//report_detailed.html?id="+data.data.id,"_blank");
+                    window.open("http://ctdn.galaxyinternet.com//report_detailed.html?id="+data.data.id,"_blank");
               })
             }
             else
@@ -136,7 +136,7 @@ function preview(){
 
 //上传
 $("#authorPic").fileupload({
-		url:'http://ctdnqa.gi.com/cloudstorage/upload/image',
+		url:'http://ctdn.galaxyinternet.com/cloudstorage/upload/image',
 		formData:{},
 		headers:{
          '_uid_':getCookie('_uid_'),
@@ -165,7 +165,7 @@ $("#authorPic").fileupload({
 })
 
 $("#listPic").fileupload({
-		url:'http://ctdnqa.gi.com/cloudstorage/upload/image',
+		url:'http://ctdn.galaxyinternet.com/cloudstorage/upload/image',
 		formData:{},
 		headers:{
              '_uid_':getCookie('_uid_'),

@@ -218,7 +218,7 @@ function update(value,row,index){
         var update ='<a href="update?id='+id+'"><p id="sta'+id+'">修改</p></a>';
     }
     if(state==0){
-        var update = '<a href="http://ctdnrc.galaxyinternet.com//report_detailed.html?id='+id+'"><p id="sta'+id+'">详情</p></a>'
+        var update = '<a href="http://ctdn.galaxyinternet.com//report_detailed.html?id='+id+'"><p id="sta'+id+'">详情</p></a>'
     }
     return update;
 }
