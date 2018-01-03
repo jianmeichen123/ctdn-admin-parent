@@ -1,11 +1,14 @@
+var picOne='';
+var picTwo='';
 function fillUpdateReport(data,divList){
     $(".pic_one img").attr('src',data.authorAvatar);
     $(".pic_one").css("display",'inline-block');
     $('.author-label_one').css('display','none');
-
+    picOne=data.authorAvatar;
     $(".picture-big img").attr('src',data.listPic);
     $(".picture-big").css("display",'inline-block');
     $('.author-label_two').css('display','none');
+    picTwo = data.listPic;
     $(divList).each(function(){
         var div = $(this)
         var ls = div.find("*[data-field]");
@@ -21,13 +24,7 @@ function fillUpdateReport(data,divList){
     })
 }
 
-function author(value,row,index){
-    alert(1)
-}
 
-function listPic(value,row,index){
-    alert(2);
-}
 
 var id = getHrefParamter("id");
 sendGetRequest("getReport/"+id,function(data){fillUpdateReport(data.data,$("div[data-query='getReport']"))})
@@ -61,6 +58,12 @@ var listPic='';
 function update(){
     var url ="updateReport"
     var data = JSON.stringify($("#form").serializeJson());
+    if(!authorAvatar){
+         data["authorAvatar"] =picOne;
+    }
+    if(!listPic){
+             data["listPic"] =picTwo;
+        }
     $.ajax({
         type: "POST",
         url:url,
@@ -187,10 +190,19 @@ $.fn.serializeJson = function(){
 		var array = this.serializeArray();
 		data["state"]=0;
 		data["id"]=id;
-		data["authorAvatar"] = authorAvatar;
-        data["listPic"] = listPic;
+		if(authorAvatar){
+		    data["authorAvatar"] = authorAvatar;
+		}else{
+		    data["authorAvatar"] = picOne;
+		}
+		if(listPic){
+		    data["listPic"] = listPic;
+		}else{
+		    data["listPic"] = picTwo;
+		}
 		$.each(array,function(){
 			data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
 		})
 		return data;
 	}
+
