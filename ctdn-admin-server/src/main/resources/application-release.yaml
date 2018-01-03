@@ -8,9 +8,9 @@ server:
 spring:
   redis:
     database: 1
-    host: 10.11.8.6
-    port: 6379
-    password:
+    host: 10.9.210.204
+    port: 6380
+    password: xhhl-redis
     pool.max-active: 8
     pool.max-wait: -1
     pool.max-idle: 8
