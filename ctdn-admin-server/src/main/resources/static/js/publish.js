@@ -7,8 +7,8 @@ $(function(){
         $("#form").validate({
             submitHandler: function() {
                 var title = $("input[name='title']").val();
-                var reportBody = $("input[name='reportBody']").val();
-                console.log('reportBody:',reportBody)
+//                var reportBody = $("input[name='reportBody']").val();
+//                console.log('reportBody:',reportBody)
                 if(!title){
                     alert('title');
                     return;
@@ -146,7 +146,7 @@ $("#authorPic").fileupload({
                 $(".pic_one img").attr('src',data.result.uploadFiles[0].url);
                 $(".pic_one").css("display",'inline-block');
                 $('.author-label_one').css('display','none');
-                $("input[name='authorAvatar']").val(data.result.uploadFiles[0].url);
+//                $("span[name='authorAvatar']").val(data.result.uploadFiles[0].url);
                 authorAvatar = data.result.uploadFiles[0].url;
 			}
 			else
@@ -192,7 +192,7 @@ $("#listPic").fileupload({
 				$(".picture-big img").attr('src',data.result.uploadFiles[0].url);
                 $(".picture-big").css("display",'inline-block');
                  $('.author-label_two').css('display','none');
-                 $("input[name='listPic']").val(data.result.uploadFiles[0].url)
+//                 $("input[name='listPic']").val(data.result.uploadFiles[0].url)
                  listPic = data.result.uploadFiles[0].url;
 			}
 			else
@@ -221,16 +221,9 @@ $.fn.serializeJson = function(){
 		var array = this.serializeArray();
 		data["state"]=0;
 		$.each(array,function(){
-		    alert(this.name)
-		    if(this.name.indexOf("authorAvatar")>0){
-		        data["authorAvatar"] = this.value.replace(authorAvatar,"");
-		        alert(data["authorAvatar"] )
-		    }else if(this.name.indexOf("listPic")>0){
-		        data["listPic"] = this.value.replace(listPic,"");
-		        alert(data["listPic"] )
-		    }else{
-		        data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
-		    }
+            data["authorAvatar"] = authorAvatar
+            data["listPic"] = listPic
+            data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
 		})
 		return data;
 	}
