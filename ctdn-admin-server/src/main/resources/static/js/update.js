@@ -30,22 +30,30 @@ var id = getHrefParamter("id");
 sendGetRequest("getReport/"+id,function(data){fillUpdateReport(data.data,$("div[data-query='getReport']"))})
 
 $(function(){
-//        //表单清空
-//       $("#form")[0].reset();
-//            //表单验证
-//        $("#form").validate({
-//            submitHandler: function() {
-//                var title = $("input[name='title']").val();
-//                if(!title){
-//                    $(".publish-title").addClass("red")
-//                    return;
-//                }
-//
-//            }
-//        })
+        var num = 0;
+            //表单验证
+        $("#form").validate({
+            submitHandler: function() {
+                var title = $("input[name='title']").val();
+                if(!title){
+                    $(".publish-title").addClass("red")
+                    return;
+                }
+                if(num==1){
+                    update();
+                }
+                if(num==2){
+                    preview();
+                }
+            }
+        })
    $('.publish-report').click(function(){
-//        $("#form").submit();
-        update();
+        num =1;
+        $("#form").submit();
+   })
+   $(".preview").click(function(){
+       num = 2;
+       $("#form").submit();
    })
 })
 
@@ -84,11 +92,31 @@ function update(){
     })
 }
 
-$(".preview").click(function(){
-    location.href="http://ctdnrc.galaxyinternet.com//report_detailed.html?id="+id;
-})
 
 
+//预览
+function preview(){
+    var url ="insertReport"
+    var data = JSON.stringify($("#form").serializeJsonPre());
+    $.ajax({
+        type: "POST",
+        url:url,
+        contentType:'application/json;charset=UTF-8',
+        data:data,
+        success:function(data){
+            if(data.message == 'OK')
+            {
+              $.get("previewReport",function(data){
+                    window.open("http://ctdnrc.galaxyinternet.com//report_detailed.html?id="+data.data.id,"_blank");
+              })
+            }
+            else
+            {
+                layer.msg("保存失败~~!");
+            }
+        }
+    })
+}
 
  function getCookie(c_name)
      {
@@ -206,3 +234,23 @@ $.fn.serializeJson = function(){
 		return data;
 	}
 
+	//预览
+    $.fn.serializeJsonPre = function(){
+            var data = {};
+            var array = this.serializeArray();
+            data["state"]=2;
+            if(authorAvatar){
+                    data["authorAvatar"] = authorAvatar;
+                }else{
+                    data["authorAvatar"] = picOne;
+                }
+                if(listPic){
+                    data["listPic"] = listPic;
+                }else{
+                    data["listPic"] = picTwo;
+                }
+            $.each(array,function(){
+                data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
+            })
+            return data;
+        }
