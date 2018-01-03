@@ -219,11 +219,12 @@ $.fn.serializeJson = function(){
 		var array = this.serializeArray();
 		data["state"]=0;
 		$.each(array,function(){
+		    alert(this.name)
 		    if(this.name.indexOf("authorAvatar")>0){
-		        data["authorAvatar"] = authorAvatar;
+		        data["authorAvatar"] = this.value.replace(authorAvatar,"");
 		        alert(data["authorAvatar"] )
 		    }else if(this.name.indexOf("listPic")>0){
-		        data["listPic"] = listPic;
+		        data["listPic"] = this.value.replace(listPic,"");
 		        alert(data["listPic"] )
 		    }else{
 		        data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
