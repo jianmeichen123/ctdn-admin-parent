@@ -174,7 +174,6 @@ $.fn.serializeJson = function(){
 		data["id"]=id;
 		data["authorAvatar"] = authorAvatar;
         data["listPic"] = listPic;
-        alert(data["listPic"] )
 		$.each(array,function(){
 			data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
 		})
