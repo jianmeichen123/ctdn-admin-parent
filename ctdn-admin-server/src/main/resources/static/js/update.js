@@ -1,4 +1,11 @@
 function fillUpdateReport(data,divList){
+    $(".pic_one img").attr('src',data.authorAvatar);
+    $(".pic_one").css("display",'inline-block');
+    $('.author-label_one').css('display','none');
+
+    $(".picture-big img").attr('src',data.listPic);
+    $(".picture-big").css("display",'inline-block');
+    $('.author-label_two').css('display','none');
     $(divList).each(function(){
         var div = $(this)
         var ls = div.find("*[data-field]");
@@ -12,6 +19,14 @@ function fillUpdateReport(data,divList){
             }
         })
     })
+}
+
+function author(value,row,index){
+    alert(1)
+}
+
+function listPic(value,row,index){
+    alert(2);
 }
 
 var id = getHrefParamter("id");
