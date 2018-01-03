@@ -46,22 +46,6 @@ $(function(){
 var authorAvatar='';
 var listPic='';
 
-//保存
-$.fn.serializeJson = function(){
-		var data = {};
-		var array = this.serializeArray();
-		data["state"]=0;
-		$.each(array,function(){
-		    if(this.name.indexOf("authorAvatar")>0){
-		        data["authorAvatar"] = authorAvatar;
-		    }else if(this.name.indexOf("listPic")>0){
-		        data["listPic"] = listPic;
-		    }else{
-		        data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
-		    }
-		})
-		return data;
-	}
 
 //保存
 function save(){
@@ -227,3 +211,23 @@ $('.picture-big  em').click(function(){
     $(this).closest('.picture-content').css('display',"none");
      $('.author-label_two').css('display','inline-block');
 });
+
+
+//保存
+$.fn.serializeJson = function(){
+		var data = {};
+		var array = this.serializeArray();
+		data["state"]=0;
+		$.each(array,function(){
+		    if(this.name.indexOf("authorAvatar")>0){
+		        data["authorAvatar"] = authorAvatar;
+		        alert(data["authorAvatar"] )
+		    }else if(this.name.indexOf("listPic")>0){
+		        data["listPic"] = listPic;
+		        alert(data["listPic"] )
+		    }else{
+		        data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
+		    }
+		})
+		return data;
+	}
