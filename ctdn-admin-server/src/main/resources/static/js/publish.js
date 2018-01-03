@@ -84,7 +84,7 @@ function preview(){
             if(data.message == 'OK')
             {
               $.get("previewReport",function(data){
-                    window.open("http://ctdnqa.gi.com//report_detailed.html?id="+data.data.id,"_blank");
+                    window.open("http://ctdnrc.galaxyinternet.com//report_detailed.html?id="+data.data.id,"_blank");
               })
             }
             else

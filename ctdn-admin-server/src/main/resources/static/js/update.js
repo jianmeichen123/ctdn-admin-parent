@@ -85,7 +85,7 @@ function update(){
 }
 
 $(".preview").click(function(){
-    location.href="http://ctdnqa.gi.com//report_detailed.html?id="+id;
+    location.href="http://ctdnrc.galaxyinternet.com//report_detailed.html?id="+id;
 })
 
 
