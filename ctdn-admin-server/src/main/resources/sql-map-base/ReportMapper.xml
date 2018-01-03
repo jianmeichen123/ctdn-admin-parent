@@ -75,7 +75,7 @@
 		update app_report
 		set
 		title=#{title},state=#{state},publishDate=#{publishDate},source=#{source},authorName=#{authorName},
-		authorAvatar=#{authorAvatar},authorDesc=#{authorDesc},listPic=#{authorDesc},reportBody=#{reportBody},
+		authorAvatar=#{authorAvatar},authorDesc=#{authorDesc},listPic=#{listPic},reportBody=#{reportBody},
 		coverPic=#{coverPic},reportDesc=#{reportDesc},fileUrl=#{fileUrl},type=#{type}
 		where id=#{id}
 	</update>

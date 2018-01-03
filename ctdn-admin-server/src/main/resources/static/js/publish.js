@@ -7,8 +7,8 @@ $(function(){
         $("#form").validate({
             submitHandler: function() {
                 var title = $("input[name='title']").val();
-                var reportBody = $("input[name='reportBody']").val();
-                console.log('reportBody:',reportBody)
+//                var reportBody = $("input[name='reportBody']").val();
+//                console.log('reportBody:',reportBody)
                 if(!title){
                     alert('title');
                     return;
@@ -43,17 +43,8 @@ $(function(){
       })
 })
 
-
-//保存
-$.fn.serializeJson = function(){
-		var data = {};
-		var array = this.serializeArray();
-		data["state"]=0;
-		$.each(array,function(){
-			data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
-		})
-		return data;
-	}
+var authorAvatar='';
+var listPic='';
 
 
 //保存
@@ -93,7 +84,7 @@ function preview(){
             if(data.message == 'OK')
             {
               $.get("previewReport",function(data){
-                    window.open("http://ctdnqa.gi.com//report_detailed.html?id="+data.data.id,"_blank");
+                    window.open("http://ctdnrc.galaxyinternet.com//report_detailed.html?id="+data.data.id,"_blank");
               })
             }
             else
@@ -105,16 +96,7 @@ function preview(){
 }
 
 
-//预览
-$.fn.serializeJsonPre = function(){
-        var data = {};
-        var array = this.serializeArray();
-        data["state"]=2;
-        $.each(array,function(){
-            data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
-        })
-        return data;
-    }
+
 
 
 
@@ -155,7 +137,8 @@ $("#authorPic").fileupload({
                 $(".pic_one img").attr('src',data.result.uploadFiles[0].url);
                 $(".pic_one").css("display",'inline-block');
                 $('.author-label_one').css('display','none');
-
+//                $("span[name='authorAvatar']").val(data.result.uploadFiles[0].url);
+                authorAvatar = data.result.uploadFiles[0].url;
 			}
 			else
 			{
@@ -178,14 +161,8 @@ $("#listPic").fileupload({
 				return;
 			}
 			if(data.files[0].size > 500*1024*1024){
-//				$("#projLogoName").html("<font color='red'>*您的文件大小超过限制，请控制在500KB之内</font>")
 				return;
 			}
-//			if(data.file[0].name.length>200){
-////				$("#projLogoName").text("文件名过长不能超过200个字...")
-//				return;
-//			}
-//			$("#projLogoName").text("")
             data.submit();
         },
         messages: {
@@ -194,12 +171,11 @@ $("#listPic").fileupload({
 		done: function (e, data) {
 			if(data.result.success)
 			{
-				/*$(".picture-content img").attr("src",data.result.uploadFiles[0].url);
-				$(".picture-content").show()
-				$("input[name='projectLogo']").val(data.result.uploadFiles[0].url)*/
 				$(".picture-big img").attr('src',data.result.uploadFiles[0].url);
                 $(".picture-big").css("display",'inline-block');
                  $('.author-label_two').css('display','none');
+//                 $("input[name='listPic']").val(data.result.uploadFiles[0].url)
+                 listPic = data.result.uploadFiles[0].url;
 			}
 			else
 			{
@@ -219,3 +195,30 @@ $('.picture-big  em').click(function(){
     $(this).closest('.picture-content').css('display',"none");
      $('.author-label_two').css('display','inline-block');
 });
+
+
+//保存
+$.fn.serializeJson = function(){
+		var data = {};
+		var array = this.serializeArray();
+		data["state"]=0;
+		data["authorAvatar"] = authorAvatar
+        data["listPic"] = listPic
+		$.each(array,function(){
+            data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
+		})
+		return data;
+	}
+
+	//预览
+    $.fn.serializeJsonPre = function(){
+            var data = {};
+            var array = this.serializeArray();
+            data["state"]=2;
+            data["authorAvatar"] = authorAvatar
+            data["listPic"] = listPic
+            $.each(array,function(){
+                data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
+            })
+            return data;
+        }
