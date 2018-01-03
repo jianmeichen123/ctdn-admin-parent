@@ -18,7 +18,7 @@ spring:
     timeout: 0
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://10.11.8.8:3308/ctdn?characterEncoding=utf-8
+    url: jdbc:mysql://10.11.8.8:3308/ctdn_db?characterEncoding=utf-8
     username: ctdn
     password: DArYXXHG4M#kqQY
     driver-class-name: com.mysql.jdbc.Driver
