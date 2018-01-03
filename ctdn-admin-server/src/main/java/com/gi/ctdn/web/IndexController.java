@@ -28,7 +28,7 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
     private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
-    private  String domain = "ctdnqa.gi.com";
+    private  String domain = "ctdn.galaxyinternet.com";
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
     @Autowired
