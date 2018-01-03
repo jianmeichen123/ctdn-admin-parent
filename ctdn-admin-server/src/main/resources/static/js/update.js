@@ -37,17 +37,10 @@ $(function(){
    })
 })
 
-$.fn.serializeJson = function(){
-		var data = {};
-		var array = this.serializeArray();
-		data["state"]=0;
-		data["id"]=id;
-		console.log(data)
-		$.each(array,function(){
-			data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
-		})
-		return data;
-	}
+
+
+var authorAvatar='';
+var listPic='';
 
 //更新
 function update(){
@@ -116,7 +109,7 @@ $("#authorPic").fileupload({
                 $(".pic_one img").attr('src',data.result.uploadFiles[0].url);
                 $(".pic_one").css("display",'inline-block');
                 $('.author-label_one').css('display','none');
-
+                authorAvatar = data.result.uploadFiles[0].url;
 			}
 			else
 			{
@@ -139,14 +132,9 @@ $("#listPic").fileupload({
 				return;
 			}
 			if(data.files[0].size > 500*1024*1024){
-//				$("#projLogoName").html("<font color='red'>*您的文件大小超过限制，请控制在500KB之内</font>")
 				return;
 			}
-//			if(data.file[0].name.length>200){
-////				$("#projLogoName").text("文件名过长不能超过200个字...")
-//				return;
-//			}
-//			$("#projLogoName").text("")
+
             data.submit();
         },
         messages: {
@@ -155,12 +143,10 @@ $("#listPic").fileupload({
 		done: function (e, data) {
 			if(data.result.success)
 			{
-				/*$(".picture-content img").attr("src",data.result.uploadFiles[0].url);
-				$(".picture-content").show()
-				$("input[name='projectLogo']").val(data.result.uploadFiles[0].url)*/
 				$(".picture-big img").attr('src',data.result.uploadFiles[0].url);
                 $(".picture-big").css("display",'inline-block');
                  $('.author-label_two').css('display','none');
+                 listPic = data.result.uploadFiles[0].url;
 			}
 			else
 			{
@@ -180,3 +166,17 @@ $('.picture-big  em').click(function(){
     $(this).closest('.picture-content').css('display',"none");
      $('.author-label_two').css('display','inline-block');
 });
+
+$.fn.serializeJson = function(){
+		var data = {};
+		var array = this.serializeArray();
+		data["state"]=0;
+		data["id"]=id;
+		data["authorAvatar"] = authorAvatar;
+        data["listPic"] = listPic;
+        alert(data["listPic"] )
+		$.each(array,function(){
+			data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
+		})
+		return data;
+	}

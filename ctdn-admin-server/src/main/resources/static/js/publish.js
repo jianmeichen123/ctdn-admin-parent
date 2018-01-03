@@ -96,16 +96,7 @@ function preview(){
 }
 
 
-//预览
-$.fn.serializeJsonPre = function(){
-        var data = {};
-        var array = this.serializeArray();
-        data["state"]=2;
-        $.each(array,function(){
-            data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
-        })
-        return data;
-    }
+
 
 
 
@@ -170,14 +161,8 @@ $("#listPic").fileupload({
 				return;
 			}
 			if(data.files[0].size > 500*1024*1024){
-//				$("#projLogoName").html("<font color='red'>*您的文件大小超过限制，请控制在500KB之内</font>")
 				return;
 			}
-//			if(data.file[0].name.length>200){
-////				$("#projLogoName").text("文件名过长不能超过200个字...")
-//				return;
-//			}
-//			$("#projLogoName").text("")
             data.submit();
         },
         messages: {
@@ -186,9 +171,6 @@ $("#listPic").fileupload({
 		done: function (e, data) {
 			if(data.result.success)
 			{
-				/*$(".picture-content img").attr("src",data.result.uploadFiles[0].url);
-				$(".picture-content").show()
-				$("input[name='projectLogo']").val(data.result.uploadFiles[0].url)*/
 				$(".picture-big img").attr('src',data.result.uploadFiles[0].url);
                 $(".picture-big").css("display",'inline-block');
                  $('.author-label_two').css('display','none');
@@ -220,10 +202,23 @@ $.fn.serializeJson = function(){
 		var data = {};
 		var array = this.serializeArray();
 		data["state"]=0;
+		data["authorAvatar"] = authorAvatar
+        data["listPic"] = listPic
 		$.each(array,function(){
-            data["authorAvatar"] = authorAvatar
-            data["listPic"] = listPic
             data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
 		})
 		return data;
 	}
+
+	//预览
+    $.fn.serializeJsonPre = function(){
+            var data = {};
+            var array = this.serializeArray();
+            data["state"]=2;
+            data["authorAvatar"] = authorAvatar
+            data["listPic"] = listPic
+            $.each(array,function(){
+                data[this.name]=this.value.replace(/(^\s+)|(\s+$)/g,"");
+            })
+            return data;
+        }
