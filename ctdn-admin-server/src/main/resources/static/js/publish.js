@@ -146,6 +146,7 @@ $("#authorPic").fileupload({
                 $(".pic_one img").attr('src',data.result.uploadFiles[0].url);
                 $(".pic_one").css("display",'inline-block');
                 $('.author-label_one').css('display','none');
+                $("input[name='authorAvatar']").val(data.result.uploadFiles[0].url);
                 authorAvatar = data.result.uploadFiles[0].url;
 			}
 			else
@@ -191,6 +192,7 @@ $("#listPic").fileupload({
 				$(".picture-big img").attr('src',data.result.uploadFiles[0].url);
                 $(".picture-big").css("display",'inline-block');
                  $('.author-label_two').css('display','none');
+                 $("input[name='listPic']").val(data.result.uploadFiles[0].url)
                  listPic = data.result.uploadFiles[0].url;
 			}
 			else
