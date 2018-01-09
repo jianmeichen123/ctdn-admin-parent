@@ -1,6 +1,6 @@
 spring: 
   profiles: 
-    active: "release"
+    active: "dev"
     include: ctdn
   thymeleaf:
     prefix: classpath:/templates

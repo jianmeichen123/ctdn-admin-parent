@@ -118,7 +118,7 @@ function preview(){
 
 //上传
 $("#authorPic").fileupload({
-		url:'http://ctdn.galaxyinternet.com/cloudstorage/upload/image',
+		url:'http://ctdnqa.gi.com/cloudstorage/upload/image',
 		formData:{},
 		headers:{
          '_uid_':getCookie('_uid_'),
@@ -148,7 +148,7 @@ $("#authorPic").fileupload({
 })
 
 $("#listPic").fileupload({
-		url:'http://ctdn.galaxyinternet.com/cloudstorage/upload/image',
+		url:'http://ctdnqa.gi.com/cloudstorage/upload/image',
 		formData:{},
 		headers:{
              '_uid_':getCookie('_uid_'),
